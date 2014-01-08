@@ -1,18 +1,18 @@
-Dit is een standalone digitalcoin Wallet voor uw Android apparaat. U kan direct digitalcoins versturen tussen telefoons door simpelweg de QR-code te scannen die de app weergeeft of via NFC (Near Field Communication).
+Dit is een standalone Megacoin Wallet voor uw Android apparaat. U kan direct Megacoins versturen tussen telefoons door simpelweg de QR-code te scannen die de app weergeeft of via NFC (Near Field Communication).
 
 FUNCTIES:
 
-• Weergeven van het wallet saldo in digitalcoin en verschillende andere valuta.
-• Verzenden en ontvangen van digitalcoin via NFC, QR-codes of digitalcoin URLs.
-• Adresboek voor veelgebruikte digitalcoin adressen.
+• Weergeven van het wallet saldo in Megacoin en verschillende andere valuta.
+• Verzenden en ontvangen van Megacoin via NFC, QR-codes of Megacoin URLs.
+• Adresboek voor veelgebruikte Megacoin adressen.
 • Transacties ingeven tijdens het offline zijn, deze zullen worden uitgevoerd wanneer u online komt.
-• Systeem melding over digitalcoin connectiviteit en ontvangen digitalcoins.
-• Widget voor digitalcoin saldo.
+• Systeem melding over Megacoin connectiviteit en ontvangen Megacoins.
+• Widget voor Megacoin saldo.
 
-Voor meer informatie over digitalcoin kunt u terecht op
+Voor meer informatie over Megacoin kunt u terecht op
 http://digitalcoin.co
 
-Als u een bijdrage wil leveren aan digitalcoin Wallet, het project is te vinden op
+Als u een bijdrage wil leveren aan Megacoin Wallet, het project is te vinden op
 https://github.com/HashEngineering/digitalcoin-wallet
 
 Licentie: GPLv3

@@ -29,7 +29,7 @@ import com.google.bitcoin.params.MainNetParams;
 import com.google.bitcoin.params.TestNet3Params;
 import com.google.bitcoin.core.CoinDefinition;
 
-import de.schildbach.wallet.digitalcoin.R;
+import de.schildbach.wallet.megacoin.R;
 
 /**
  * @author Andreas Schildbach
@@ -98,9 +98,9 @@ public class Constants
 	public static final String BINARY_URL = "http://code.google.com/p/bitcoin-wallet/downloads/list";
 	public static final String CREDITS_BITCOINJ_URL = "https://github.com/HashEngineering/" + CoinDefinition.coinName + "j";
 	public static final String CREDITS_ZXING_URL = "http://code.google.com/p/zxing/";
-    public static final String CREDITS_WEBSITE_URL = "http://digitalcoin.co/";
-    public static final String CREDITS_FORUM_URL = "http://digitalcoin.co/forums/";
-	public static final String CREDITS_ICON_URL = "https://bitcointalk.org/index.php?action=profile;u=2062";
+    public static final String CREDITS_WEBSITE_URL = "https://megacoin.co.nz";
+    public static final String CREDITS_FORUM_URL = "https://forum.megacoin.co.nz";
+	public static final String CREDITS_ICON_URL = "https://forum.megacoin.co.nz/index.php?topic=215.msg1849#msg1849";
 
 	public static final String AUTHOR_TWITTER_URL = "https://twitter.com/#!/HashEngineering";
 	public static final String AUTHOR_GOOGLEPLUS_URL = "https://profiles.google.com/HashEngineering";

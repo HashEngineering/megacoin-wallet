@@ -73,7 +73,7 @@ import de.schildbach.wallet.util.BitmapFragment;
 import de.schildbach.wallet.util.Nfc;
 import de.schildbach.wallet.util.Qr;
 import de.schildbach.wallet.util.WalletUtils;
-import de.schildbach.wallet.digitalcoin.R;
+import de.schildbach.wallet.megacoin.R;
 import de.schildbach.wallet.util.ThrottlingWalletChangeListener;
 
 

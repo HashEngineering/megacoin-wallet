@@ -1,19 +1,19 @@
-digitalcoin'leriniz daima cebinizde sizinle olsun! Herhangi bir QR kodunu okuyarak çabuk ödeme yapabilirsiniz. Bir tüccar olarak ödemeleri güvenilir ve anında alabilirsiniz. digitalcoin cüzdanı ilk mobil digitalcoin uygulamasıdır ve muhtemelen en güvenli digitalcoin uygulamasıdır!
+Megacoin'leriniz daima cebinizde sizinle olsun! Herhangi bir QR kodunu okuyarak çabuk ödeme yapabilirsiniz. Bir tüccar olarak ödemeleri güvenilir ve anında alabilirsiniz. Megacoin cüzdanı ilk mobil Megacoin uygulamasıdır ve muhtemelen en güvenli Megacoin uygulamasıdır!
 
 İŞLEVLERİ:
 • Hiçbir oturuma, web ya da bulut hizmetine gerek yoktur. Bu cüzdan merkezsiz ve eşten eşedir.
-• digitalcoin meblağlarının BTC ve mBTC olarak gösterilmesi.
+• Megacoin meblağlarının BTC ve mBTC olarak gösterilmesi.
 • Dövizlere ve dövizlerden dönüştürme.
-• NFC, QR kodu veya digitalcoin bağlantıları ile digitalcoin gönderir ve alır.
-• Sık kullanılan digitalcoin adresleri için adres defteri içerir.
+• NFC, QR kodu veya Megacoin bağlantıları ile Megacoin gönderir ve alır.
+• Sık kullanılan Megacoin adresleri için adres defteri içerir.
 • Çevrimdışı olduğunuzda Bluetooth vasıtasıyla ödemeler.
-• Alınan digitalcoin'ler için sistem bildirimleri.
-• digitalcoin bakiyesini görüntüleyen widget.
+• Alınan Megacoin'ler için sistem bildirimleri.
+• Megacoin bakiyesini görüntüleyen widget.
 
-digitalcoin hakkında daha fazla bilgi için şu siteyi ziyaret edebilirsiniz:
+Megacoin hakkında daha fazla bilgi için şu siteyi ziyaret edebilirsiniz:
 http://digitalcoin.co
 
-digitalcoin Wallet uygulamasına katkıda bulunmak istiyorsanız proje sayfasını ziyaret ediniz:
+Megacoin Wallet uygulamasına katkıda bulunmak istiyorsanız proje sayfasını ziyaret ediniz:
 https://github.com/HashEngineering/digitalcoin-wallet
 
 Lisans: GPLv3

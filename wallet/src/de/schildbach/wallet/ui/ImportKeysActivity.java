@@ -45,7 +45,7 @@ import de.schildbach.wallet.Constants;
 import de.schildbach.wallet.util.Crypto;
 import de.schildbach.wallet.util.WalletUtils;
 
-import de.schildbach.wallet.digitalcoin.R;
+import de.schildbach.wallet.megacoin.R;
 
 
 /**

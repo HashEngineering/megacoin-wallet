@@ -66,7 +66,7 @@ import de.schildbach.wallet.service.BlockchainService;
 import de.schildbach.wallet.service.BlockchainServiceImpl;
 import de.schildbach.wallet.util.WalletUtils;
 
-import de.schildbach.wallet.digitalcoin.R;
+import de.schildbach.wallet.megacoin.R;
 
 
 
@@ -181,7 +181,7 @@ public final class BlockListFragment extends SherlockListFragment
 				switch (item.getItemId())
 				{
 					case R.id.blocks_context_browse:
-						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.EXPLORE_BASE_URL + "block/"
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.EXPLORE_BASE_URL + "blocks/"
 								+ storedBlock.getHeader().getHashAsString())));
 
 						mode.finish();

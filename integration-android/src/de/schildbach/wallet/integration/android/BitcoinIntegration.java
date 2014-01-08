@@ -140,7 +140,7 @@ public final class BitcoinIntegration
 
 	private static Intent makeIntent(final String address, final Long amount)
 	{
-		final StringBuilder uri = new StringBuilder("digitalcoin:");
+		final StringBuilder uri = new StringBuilder("megacoin:");
 		if (address != null)
 			uri.append(address);
 		if (amount != null)
@@ -171,9 +171,9 @@ public final class BitcoinIntegration
 
 	private static void redirectToDownload(final Context context)
 	{
-		Toast.makeText(context, "No digitalcoin application found.\nPlease install digitalcoin Wallet.", Toast.LENGTH_LONG).show();
+		Toast.makeText(context, "No Megacoin application found.\nPlease install Megacoin Wallet.", Toast.LENGTH_LONG).show();
 
-		final Intent marketIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=de.schildbach.wallet"));
+		final Intent marketIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=de.schildbach.wallet.megacoin"));
 		final Intent binaryIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://code.google.com/p/bitcoin-wallet/downloads/list"));
 
 		final PackageManager pm = context.getPackageManager();

@@ -28,7 +28,7 @@ import com.actionbarsherlock.view.MenuItem;
 
 import de.schildbach.wallet.util.ViewPagerTabs;
 
-import de.schildbach.wallet.digitalcoin.R;
+import de.schildbach.wallet.megacoin.R;
 
 
 /**

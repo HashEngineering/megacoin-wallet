@@ -1,18 +1,18 @@
-Samodzielny portfel digitalcoin dla Twojego urządzenia Android. Możesz wysyłać digitalcoin pomiędzy telefonami skanując kod QR, który jest wyświetlany przez aplikacje, lub przez NFC (Near Field Communication).
+Samodzielny portfel Megacoin dla Twojego urządzenia Android. Możesz wysyłać Megacoin pomiędzy telefonami skanując kod QR, który jest wyświetlany przez aplikacje, lub przez NFC (Near Field Communication).
 
 FUNKCJE:
 
-• Wyświetlanie stanu konta portfela w digitalcoin i rożnych innych walutach.
-• Wysyłanie i odbieranie digitalcoin przez NFC, kod QR albo digitalcoin URL.
-• Książka adresowa dla regularnie używanych adresów digitalcoin.
+• Wyświetlanie stanu konta portfela w Megacoin i rożnych innych walutach.
+• Wysyłanie i odbieranie Megacoin przez NFC, kod QR albo Megacoin URL.
+• Książka adresowa dla regularnie używanych adresów Megacoin.
 • Możliwość dodania transakcji offline, wykonywanych po połączeniu z siecią.
-• Notyfikacje systemowe o połączeniu z siecią digitalcoin i otrzymanych monetach.
-• Widget na stan konta digitalcoin.
+• Notyfikacje systemowe o połączeniu z siecią Megacoin i otrzymanych monetach.
+• Widget na stan konta Megacoin.
 
-Więcej o digitalcoin dowiesz się pod adresem:
+Więcej o Megacoin dowiesz się pod adresem:
 http://digitalcoin.co
 
-Jeżeli chcesz wesprzeć digitalcoin Wallet, kody źródłowe projektu znajdują się pod adresem:
+Jeżeli chcesz wesprzeć Megacoin Wallet, kody źródłowe projektu znajdują się pod adresem:
 https://github.com/HashEngineering/digitalcoin-wallet
 
 Licencja: GPLv3

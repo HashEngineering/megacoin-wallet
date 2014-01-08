@@ -1,18 +1,18 @@
-Consiste en una cartera de digitalcoins para tu dispositivo Android. Puedes enviar digitalcoins entre teléfonos haciendo explorar los códigos QR que muestra la aplicación o mediante NFC (Near Field Communication).
+Consiste en una cartera de Megacoins para tu dispositivo Android. Puedes enviar Megacoins entre teléfonos haciendo explorar los códigos QR que muestra la aplicación o mediante NFC (Near Field Communication).
 
 CARACTERÍSTICAS:
 
-• Visualización del saldo de la cartera en digitalcoin y en otras monedas.
-• Envío y recpción de digitalcoins a través de NFC, códigos QR o URL digitalcoin.
-• Libreta de direcciones para guardar las direcciones digitalcoin utilizadas habitualmente.
+• Visualización del saldo de la cartera en Megacoin y en otras monedas.
+• Envío y recpción de Megacoins a través de NFC, códigos QR o URL Megacoin.
+• Libreta de direcciones para guardar las direcciones Megacoin utilizadas habitualmente.
 • Las transacciones se pueden llevar a cabo sin conexión, ejecutándose al recuperar la conexión.
-• Notificaciones de sistema para la conectividad a la red digitalcoin y para la recepción de digitalcoins.
-• Widget de aplicación para el saldo digitalcoin.
+• Notificaciones de sistema para la conectividad a la red Megacoin y para la recepción de Megacoins.
+• Widget de aplicación para el saldo Megacoin.
 
-Puedes descubrir más sobre digitalcoin en
+Puedes descubrir más sobre Megacoin en
 http://digitalcoin.co
 
-Si quieres contribuir a digitalcoin Wallet, el proyecto está localizado en
+Si quieres contribuir a Megacoin Wallet, el proyecto está localizado en
 https://github.com/HashEngineering/digitalcoin-wallet
 
 Licencia: GPLv3
