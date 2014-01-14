@@ -3,7 +3,7 @@ Have your Megacoins always with you, in your pocket! You pay by quickly scanning
 FEATURES:
 
 • No registration, web service or cloud needed! This wallet is de-centralized and peer to peer.
-• Display of Megacoin amount in DGC and mDGC.
+• Display of Megacoin amount in MEC and mMEC.
 • Conversion to and from national currencies.
 • Sending and receiving of Megacoin via NFC, QR-codes or Megacoin URLs.
 • Address book for regularly used Megacoin addresses.
@@ -12,7 +12,7 @@ FEATURES:
 • App widget for Megacoin balance.
 
 You can find more about Megacoin at
-http://Megacoin.co
+http://www.megacoin.co.nz/
 
 If you want to contribute to Megacoin Wallet, the project is located at
 https://github.com/HashEngineering/Megacoin-wallet

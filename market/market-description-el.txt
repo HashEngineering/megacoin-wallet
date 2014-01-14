@@ -10,10 +10,10 @@
 • App widget για το υπόλοιπο των Megacoin.
 
 Μπορείτε να βρείτε περισσότερα για τη χρήση Megacoin στο
-http://digitalcoin.co
+http://www.megacoin.co.nz/
 
 Αν θέλετε να συμβάλει στη τη χρήση του Megacoin Wallet, το έργο βρίσκεται εδώ:
-https://github.com/HashEngineering/digitalcoin-wallet
+https://github.com/HashEngineering/megacoin-wallet
 
 Άδεια: GPLv3
 Χρησιμοποιήστε με δική σας ευθύνη!

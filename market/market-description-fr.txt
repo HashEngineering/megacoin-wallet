@@ -4,7 +4,7 @@ Ayez vos Megacoins toujours avec vous dans votre poche ! Payez rapidement en num
 FONCTIONS :
 
 • Pas d'inscription, de service Web ou de nuage de nécessaire ! Ce portefeuille est décentralisé et de pair-à-pair.
-• Affichage du montant de Megacoin en DGC et mDGC.
+• Affichage du montant de Megacoin en MEC et mMEC.
 • Conversion de et vers des devises nationales.
 • Envoi et réception des Megacoin via NFC, codes QR ou des URLs Megacoin.
 • Carnet d'adresse pour les adresses Megacoin utilisées régulièrement.
@@ -13,10 +13,10 @@ FONCTIONS :
 • Widget affichant le solde Bitcoin.
 
 Vous pouvez en apprendre plus au sujet de Megacoin sur
-http://digitalcoin.co
+http://www.megacoin.co.nz/
 
 Si vous voulez contribuer à Megacoin Wallet, le projet se trouve sur
-https://github.com/HashEngineering/digitalcoin-wallet
+https://github.com/HashEngineering/megacoin-wallet
 
 Licence : GPLv3
 Utilisez à vos propres risques !

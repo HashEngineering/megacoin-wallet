@@ -10,10 +10,10 @@ FUNKCJE:
 • Widget na stan konta Megacoin.
 
 Więcej o Megacoin dowiesz się pod adresem:
-http://digitalcoin.co
+http://www.megacoin.co.nz/
 
 Jeżeli chcesz wesprzeć Megacoin Wallet, kody źródłowe projektu znajdują się pod adresem:
-https://github.com/HashEngineering/digitalcoin-wallet
+https://github.com/HashEngineering/megacoin-wallet
 
 Licencja: GPLv3
 Używanie jedynie na własne ryzyko!

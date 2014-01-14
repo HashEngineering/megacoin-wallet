@@ -12,10 +12,10 @@
 • Виджет для отображения баланса Megacoin.
 
 Вы можете узнать больше о Megacoin на
-http://digitalcoin.co
+http://www.megacoin.co.nz/
 
 Если вы хотите помочь бумажнику Megacoin, проект располагается по адресу
-https://github.com/HashEngineering/digitalcoin-wallet
+https://github.com/HashEngineering/megacoin-wallet
 
 Лицензия: GPLv3
 Используйте на свой риск!

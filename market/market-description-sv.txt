@@ -10,10 +10,10 @@ FUNKTIONER:
 • App widget som visar plånbokens värde.
 
 Du kan lära dig mer om Megacoin genom att besöka
-http://digitalcoin.co
+http://www.megacoin.co.nz/
 
 Om du vill hjälpa till med utvecklingen av Megacoin Wallet så kan du hitta projektet här
-https://github.com/HashEngineering/digitalcoin-wallet
+https://github.com/HashEngineering/megacoin-wallet
 
 Licens: GPLv3
 Använd på egen risk!

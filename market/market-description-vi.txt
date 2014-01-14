@@ -11,10 +11,10 @@ TÍNH NĂNG:
 • Tiện ích dành riêng cho Megacoin.
 
 Bạn có thể tìm hiểu thêm về digitalcoin tại
-http://Megacoin.co
+http://www.megacoin.co.nz/
 
 Nếu bạn có ý tưởng đóng góp cho Megacoin Wallet, hãy truy cập vào trang web
-https://github.com/HashEngineering/digitalcoin-wallet
+https://github.com/HashEngineering/megacoin-wallet
 
 Giấy phép: GPLv3
 Sử dụng với sự cẩn trọng của riêng bạn!

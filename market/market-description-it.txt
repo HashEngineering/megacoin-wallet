@@ -3,7 +3,7 @@ Porta i tuoi Megacoin sempre con te, in tasca! Paghi velocemente scansionando un
 CARATTERISTICHE:
 
 • Non è necessaria alcuna registrazione, servizio web o cloud! Questo portafoglio è de-centralizzato e peer to peer.
-• Mostra l'ammontare di Megacoin in DGC e mDGC.
+• Mostra l'ammontare di Megacoin in MEC e mMEC.
 • Conversione verso e dalle monete nazionali.
 • Invio e ricevimento di Megacoin tramite NFC, codici QR o URL Megacoin.
 • Rubrica degli indirizzi per usare indirizzi Megacoin regolarmente.
@@ -12,10 +12,10 @@ CARATTERISTICHE:
 • App Widget per il saldo Bitcoin
 
 Puoi trovare altri dettagli su Megacoin su
-http://digitalcoin.co
+http://www.megacoin.co.nz/
 
 Se vuoi contribuire a Megacoin Wallet, il progetto si trova su
-https://github.com/HashEngineering/digitalcoin-wallet
+https://github.com/HashEngineering/megacoin-wallet
 
 Licenza: GPLv3
 Usalo a tuo rischio!

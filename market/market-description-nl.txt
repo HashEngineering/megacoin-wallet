@@ -10,10 +10,10 @@ FUNCTIES:
 • Widget voor Megacoin saldo.
 
 Voor meer informatie over Megacoin kunt u terecht op
-http://digitalcoin.co
+http://www.megacoin.co.nz/
 
 Als u een bijdrage wil leveren aan Megacoin Wallet, het project is te vinden op
-https://github.com/HashEngineering/digitalcoin-wallet
+https://github.com/HashEngineering/megacoin-wallet
 
 Licentie: GPLv3
 Gebruik op eigen risico!

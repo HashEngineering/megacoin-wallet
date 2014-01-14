@@ -10,10 +10,10 @@ CARACTERÍSTICAS:
 • Widget de aplicación para el saldo Megacoin.
 
 Puedes descubrir más sobre Megacoin en
-http://digitalcoin.co
+http://www.megacoin.co.nz/
 
 Si quieres contribuir a Megacoin Wallet, el proyecto está localizado en
-https://github.com/HashEngineering/digitalcoin-wallet
+https://github.com/HashEngineering/megacoin-wallet
 
 Licencia: GPLv3
 ¡Úsalo bajo tu propia responsabilidad!

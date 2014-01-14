@@ -84,7 +84,7 @@ public class Constants
 
 	public static final int BTC_MAX_PRECISION = 8;
 	public static final int MBTC_MAX_PRECISION = 5;
-	public static final int LOCAL_PRECISION = 4;
+	public static final int LOCAL_PRECISION = 6;
 
 	public static final String DONATION_ADDRESS = CoinDefinition.DONATION_ADDRESS;
 	public static final String REPORT_EMAIL = "hashengineeringsolutions@gmail.com";
@@ -109,7 +109,7 @@ public class Constants
 
 	public static final String MARKET_APP_URL = "market://details?id=%s";
 	public static final String WEBMARKET_APP_URL = "https://play.google.com/store/apps/details?id=%s";
-	public static final String MARKET_PUBLISHER_URL = "market://search?q=pub:\"HashEngineering\"";
+	public static final String MARKET_PUBLISHER_URL = "market://search?q=pub:\"Hash Engineering Solutions\"";
 
 	public static final String VERSION_URL = "http://wallet.schildbach.de/version";
 	public static final int HTTP_TIMEOUT_MS = 15 * (int) DateUtils.SECOND_IN_MILLIS;

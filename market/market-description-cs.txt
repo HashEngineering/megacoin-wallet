@@ -10,7 +10,7 @@ VLASTNOSTI:
 • Widget s celkovým zůstatkem.
 
 Více informací o Megacoinech
-http://digitalcoin.co
+http://www.megacoin.co.nz/
 
 Pokud chcete přispět do projektu Megacoin Wallet, naleznete jej na adrese
 https://github.com/HashEngineering/Megacoin-wallet

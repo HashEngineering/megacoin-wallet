@@ -11,10 +11,10 @@ FITUR:
 • Widget Apl untuk saldo Megacoin.
 
 Anda dapat mengetahui lebih mengenai Megacoin di
-http://digitalcoin.co
+http://www.megacoin.co.nz/
 
 Jika Anda ingin berkontribusi kepada Megacoin Wallet, proyeknya berada di
-https://github.com/HashEngineering/digitalcoin-wallet
+https://github.com/HashEngineering/megacoin-wallet
 
 Lisensi: GPLv3
 Gunakan dengan resiko Anda!

@@ -11,10 +11,10 @@ Megacoin'leriniz daima cebinizde sizinle olsun! Herhangi bir QR kodunu okuyarak 
 • Megacoin bakiyesini görüntüleyen widget.
 
 Megacoin hakkında daha fazla bilgi için şu siteyi ziyaret edebilirsiniz:
-http://digitalcoin.co
+http://www.megacoin.co.nz/
 
 Megacoin Wallet uygulamasına katkıda bulunmak istiyorsanız proje sayfasını ziyaret ediniz:
-https://github.com/HashEngineering/digitalcoin-wallet
+https://github.com/HashEngineering/megacoin-wallet
 
 Lisans: GPLv3
 Tüm riski siz üstlenmiş olursunuz.
