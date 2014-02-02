@@ -10,7 +10,7 @@ FONCTIONS :
 • Carnet d'adresse pour les adresses Megacoin utilisées régulièrement.
 • Quand vous êtes hors-ligne vous pouvez quand même payez via Bluetooth.
 • Notification du système pour les pièces reçues.
-• Widget affichant le solde Bitcoin.
+• Widget affichant le solde Megacoin.
 
 Vous pouvez en apprendre plus au sujet de Megacoin sur
 http://www.megacoin.co.nz/

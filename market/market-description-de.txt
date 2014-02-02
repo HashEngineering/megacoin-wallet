@@ -3,7 +3,7 @@ Hab deine Megacoins immer dabei, in deiner Hosentasche! Du zahlst, indem du rasc
 FEATURES:
 
 • Keine Registrierung, Web-Dienst oder Cloud nötig! Diese Wallet ist de-zentral und Peer to Peer.
-• Anzeige von Bitcoin-Werten in MEC und mMEC.
+• Anzeige von Megacoin-Werten in MEC und mMEC.
 • Umrechnung von und zu den nationalen Währungen.
 • Senden und Empfangen von Megacoin via NFC, QR-Codes oder Megacoin URLs.
 • Adressbuch für regelmäßig genutzte Empfänger.

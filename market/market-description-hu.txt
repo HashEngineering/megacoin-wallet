@@ -1,4 +1,4 @@
-Tartsd a zsebedben Bitcoinjaidat! Egyszerűen, akár QR-kód leolvasásával is fizethetsz. Ha pedig termékeket, vagy szolgáltatást értékesítesz megbízható módon és gyorsan juthatsz a bevételeidhez. A Bitcoin Tárca az első Bitcoin app és kétségkívül a legbiztonságosabb is!
+Tartsd a zsebedben Megacoinjaidat! Egyszerűen, akár QR-kód leolvasásával is fizethetsz. Ha pedig termékeket, vagy szolgáltatást értékesítesz megbízható módon és gyorsan juthatsz a bevételeidhez. A Megacoin Tárca az első Megacoin app és kétségkívül a legbiztonságosabb is!
 
 ELŐNYÖK:
 
@@ -8,8 +8,8 @@ ELŐNYÖK:
 • Megacoin küldése és fogadása NFC, QR-kód vagy közvetlen URL segítségével.
 • Címtár a rendszeresen használt Megacoin címek számára.
 • Offline állapotban is fizethetsz - Bluetooth segítségével.
-• Rendszerüzenet Bitcoin érkezésekor.
-• Widget a Bitcoin egyenlegről.
+• Rendszerüzenet Megacoin érkezésekor.
+• Widget a Megacoin egyenlegről.
 >>>>>>> upstream/prod
 
 Bővebben a Megacoin-ról:

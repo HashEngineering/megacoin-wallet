@@ -9,7 +9,7 @@ CARATTERISTICHE:
 • Rubrica degli indirizzi per usare indirizzi Megacoin regolarmente.
 • Quando sei offline, puoi comunque ancora pagare via Bluetooth.
 • Sistema di notifica per le monete ricevute.
-• App Widget per il saldo Bitcoin
+• App Widget per il saldo Megacoin
 
 Puoi trovare altri dettagli su Megacoin su
 http://www.megacoin.co.nz/
