@@ -240,11 +240,11 @@ public class ExchangeRatesProvider extends ContentProvider
 
 
 
-
+        HttpURLConnection connectionCryptsy = null;
         try {
             // final String currencyCode = currencies[i];
             final URL URLCryptsy = new URL(urlCryptsy);
-            final URLConnection connectionCryptsy = URLCryptsy.openConnection();
+            connectionCryptsy = (HttpURLConnection)URLCryptsy.openConnection();
             connectionCryptsy.setConnectTimeout(Constants.HTTP_TIMEOUT_MS * 2);
             connectionCryptsy.setReadTimeout(Constants.HTTP_TIMEOUT_MS * 2);
             connectionCryptsy.connect();
@@ -295,7 +295,16 @@ public class ExchangeRatesProvider extends ContentProvider
             finally
             {
                 if (reader != null)
-                    reader.close();
+                {
+                    try
+                    {
+                        reader.close();
+                    }
+                    catch (final IOException x)
+                    {
+                        // swallow
+                    }
+                }
             }
             return btcRate;
         }
@@ -306,6 +315,87 @@ public class ExchangeRatesProvider extends ContentProvider
         catch (final JSONException x)
         {
             x.printStackTrace();
+        }
+        finally {
+            if (connectionCryptsy != null)
+                connectionCryptsy.disconnect();
+        }
+
+        return null;
+    }
+
+    private static Object getCoinValueBTC_BTER()
+    {
+        Date date = new Date();
+        long now = date.getTime();
+
+
+
+        //final Map<String, ExchangeRate> rates = new TreeMap<String, ExchangeRate>();
+        // Keep the LTC rate around for a bit
+        Double btcRate = 0.0;
+        String currency = CoinDefinition.cryptsyMarketCurrency;
+        String url = "http://data.bter.com/api/1/ticker/"+ CoinDefinition.coinTicker.toLowerCase() + "_" + CoinDefinition.cryptsyMarketCurrency.toLowerCase();
+
+
+
+
+        HttpURLConnection connection = null;
+        try {
+            // final String currencyCode = currencies[i];
+            final URL URL_bter = new URL(url);
+            connection = (HttpURLConnection)URL_bter.openConnection();
+            connection.setConnectTimeout(Constants.HTTP_TIMEOUT_MS * 2);
+            connection.setReadTimeout(Constants.HTTP_TIMEOUT_MS * 2);
+            connection.connect();
+
+            final StringBuilder content = new StringBuilder();
+
+            Reader reader = null;
+            try
+            {
+                reader = new InputStreamReader(new BufferedInputStream(connection.getInputStream(), 1024));
+                Io.copy(reader, content);
+                final JSONObject head = new JSONObject(content.toString());
+                String result = head.getString("result");
+                if(result.equals("true"))
+                {
+
+                    Double averageTrade = head.getDouble("avg");
+
+
+                    if(currency.equalsIgnoreCase("BTC"))
+                        btcRate = averageTrade;
+                }
+
+            }
+            finally
+            {
+                if (reader != null)
+                {
+                    try
+                    {
+                        reader.close();
+                    }
+                    catch (final IOException x)
+                    {
+                        // swallow
+                    }
+                }
+            }
+            return btcRate;
+        }
+        catch (final IOException x)
+        {
+            x.printStackTrace();
+        }
+        catch (final JSONException x)
+        {
+            x.printStackTrace();
+        }
+        finally {
+            if (connection != null)
+                connection.disconnect();
         }
 
         return null;
@@ -323,13 +413,18 @@ public class ExchangeRatesProvider extends ContentProvider
 		{
 
             Double btcRate = 0.0;
-
+            boolean cryptsyValue = true;
             Object result = getCoinValueBTC();
 
             if(result == null)
-                return null;
-
-            else btcRate = (Double)result;
+            {
+                result = getCoinValueBTC_BTER();
+                cryptsyValue = false;
+                if(result == null)
+                    return null;
+            }
+            else
+                btcRate = (Double)result;
 
 
 			connection = (HttpURLConnection) url.openConnection();
@@ -348,7 +443,7 @@ public class ExchangeRatesProvider extends ContentProvider
 				final Map<String, ExchangeRate> rates = new TreeMap<String, ExchangeRate>();
 
                 //Add Bitcoin information
-                rates.put(CoinDefinition.cryptsyMarketCurrency, new ExchangeRate(CoinDefinition.cryptsyMarketCurrency, GenericUtils.toNanoCoins(String.format("%.8f", btcRate).replace(",", "."), 0), "pubapi.cryptsy.com"));
+                rates.put(CoinDefinition.cryptsyMarketCurrency, new ExchangeRate(CoinDefinition.cryptsyMarketCurrency, GenericUtils.toNanoCoins(String.format("%.8f", btcRate).replace(",", "."), 0), cryptsyValue ? "pubapi.cryptsy.com" : "data.bter.com"));
 
 				final JSONObject head = new JSONObject(content.toString());
 				for (final Iterator<String> i = head.keys(); i.hasNext();)
