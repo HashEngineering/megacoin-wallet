@@ -1,10 +1,22 @@
+Megacoin
 
+v0.1.3
+* Updated Checkpoints
+* Added BTER.com as for exchange rates
+
+v0.1.2
+
+v0.1.1
+* First Megacoin App
+----------------------------
+digitalcoin
 v1.0.1 updated digitalcoin 1.0.1
 
 v1.00
 Forked bitcoin-wallet v3.23 for digitalcoin V1.00 (http://digitalcoin.co)
 
--------------------
+-----------------------------
+Bitcoin Wallet
 v3.29
 
 * fixed issues with fetching exchange rates

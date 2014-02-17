@@ -423,8 +423,7 @@ public class ExchangeRatesProvider extends ContentProvider
                 if(result == null)
                     return null;
             }
-            else
-                btcRate = (Double)result;
+            btcRate = (Double)result;
 
 
 			connection = (HttpURLConnection) url.openConnection();
