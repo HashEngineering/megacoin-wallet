@@ -1,6 +1,11 @@
 Megacoin
+v0.1.6
+* Fixed possible bug / optimized Kimoto Gravity Well (native)
+* updated checkpoints
+
 v0.1.5
 * Fixed URI intents
+* Native Kimoto Gravity Well added (100% faster?)
 
 v0.1.4
 * Fixed bug in BTER code to get exchange rates.
