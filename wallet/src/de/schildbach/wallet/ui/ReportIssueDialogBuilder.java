@@ -32,7 +32,6 @@ import javax.annotation.CheckForNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
@@ -43,6 +42,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 import de.schildbach.wallet.Constants;
 import de.schildbach.wallet.util.CrashReporter;
 import de.schildbach.wallet.util.Io;
@@ -55,7 +55,7 @@ import de.schildbach.wallet.megacoin.R;
 /**
  * @author Andreas Schildbach
  */
-public abstract class ReportIssueDialogBuilder extends AlertDialog.Builder implements OnClickListener
+public abstract class ReportIssueDialogBuilder extends DialogBuilder implements OnClickListener
 {
 	private final Context context;
 
@@ -81,11 +81,10 @@ public abstract class ReportIssueDialogBuilder extends AlertDialog.Builder imple
 		viewDescription = (EditText) view.findViewById(R.id.report_issue_dialog_description);
 
 		viewCollectDeviceInfo = (CheckBox) view.findViewById(R.id.report_issue_dialog_collect_device_info);
-		viewCollectInstalledPackages = (CheckBox) view.findViewById(R.id.report_issue_dialog_collect_device_info);
+		viewCollectInstalledPackages = (CheckBox) view.findViewById(R.id.report_issue_dialog_collect_installed_packages);
 		viewCollectApplicationLog = (CheckBox) view.findViewById(R.id.report_issue_dialog_collect_application_log);
 		viewCollectWalletDump = (CheckBox) view.findViewById(R.id.report_issue_dialog_collect_wallet_dump);
 
-		setInverseBackgroundForced(true);
 		setTitle(titleResId);
 		setView(view);
 		setPositiveButton(R.string.report_issue_dialog_report, this);
@@ -167,7 +166,6 @@ public abstract class ReportIssueDialogBuilder extends AlertDialog.Builder imple
 
 				for (final File logFile : logDir.listFiles())
 				{
-					final InputStream is = new FileInputStream(logFile);
 					final String logFileName = logFile.getName();
 					final File file;
 					if (logFileName.endsWith(".log.gz"))
@@ -175,7 +173,9 @@ public abstract class ReportIssueDialogBuilder extends AlertDialog.Builder imple
 					else if (logFileName.endsWith(".log"))
 						file = File.createTempFile(logFileName.substring(0, logFileName.length() - 3), ".log", cacheDir);
 					else
-						file = File.createTempFile(logFileName + '.', null, cacheDir);
+						continue;
+
+					final InputStream is = new FileInputStream(logFile);
 					final OutputStream os = new FileOutputStream(file);
 
 					Io.copy(is, os);
@@ -265,7 +265,16 @@ public abstract class ReportIssueDialogBuilder extends AlertDialog.Builder imple
 			intent.putExtra(Intent.EXTRA_SUBJECT, subject);
 		intent.putExtra(Intent.EXTRA_TEXT, text);
 
-		context.startActivity(Intent.createChooser(intent, context.getString(R.string.report_issue_dialog_mail_intent_chooser)));
+		try
+		{
+			context.startActivity(Intent.createChooser(intent, context.getString(R.string.report_issue_dialog_mail_intent_chooser)));
+			log.info("invoked chooser for sending issue report");
+		}
+		catch (final Exception x)
+		{
+			Toast.makeText(context, R.string.report_issue_dialog_mail_intent_failed, Toast.LENGTH_LONG).show();
+			log.error("report issue failed", x);
+		}
 	}
 
 	@CheckForNull

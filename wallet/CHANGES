@@ -27,10 +27,27 @@ Forked bitcoin-wallet v3.23 for digitalcoin V1.00 (http://digitalcoin.co)
 
 -----------------------------
 Bitcoin Wallet
+=======
+v3.31
+
+* Default denomination has changed to millibitcoin (mBTC).
+* Cross-calculated exchange rates for currencies without Bitcoin volume. Thanks to BitcoinAverage.
+* Better handling of errors when sending coins, specifically when funds are exceeded.
+* Labs: Uses BIP70 payment protocol for tap-to-pay and scan-to-pay, if enabled in the settings.
+* New translations into Traditional Chinese, Macedonian and Esperanto. Updated Spanish.
+* Resolved issues with wallets with many transactions.
+* Based on bitcoinj 0.11.
+
+v3.30
+
+* improved battery usage
+* new Danish translation
+* updated Polish translation
+
 v3.29
 
 * fixed issues with fetching exchange rates
-* Slovak translation
+* new Slovak translation
 * updated French, Hungarian, Italian and Portuguese translations
 
 >>>>>>> upstream/prod

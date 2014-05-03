@@ -47,6 +47,9 @@ import de.schildbach.wallet.megacoin.R;
 
 
 
+/**
+ * @author Andreas Schildbach
+ */
 public class WalletAddressesAdapter extends BaseAdapter
 {
 	private final Context context;

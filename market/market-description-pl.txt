@@ -1,20 +1,22 @@
-Samodzielny portfel Megacoin dla Twojego urządzenia Android. Możesz wysyłać Megacoin pomiędzy telefonami skanując kod QR, który jest wyświetlany przez aplikacje, lub przez NFC (Near Field Communication).
+Miej swoje Megacoiny zawsze w swojej kieszeni! Zapłacisz skanując kod QR. Jako sprzedawca odbierzesz płatności niezawodnie i natychmiastowo. Megacoin Wallet jest pierwszą aplikacją Megacoinową na telefony i niezaprzeczalnie najbezpieczniejszą.
 
-FUNKCJE:
-
-• Wyświetlanie stanu konta portfela w Megacoin i rożnych innych walutach.
-• Wysyłanie i odbieranie Megacoin przez NFC, kod QR albo Megacoin URL.
+WŁAŚCIWOŚCI:
+• Brak konieczności rejestracji, serwisu online lub chmury! Ten portfel używa zdecentralizowanej sieci peer-to-peer.
+• Wyświetl ilość kwotę w BTC i mBTC.
+• Zamiana z i na waluty narodowe
+• Wysyłąnie i odbieranie Megacoin za pomocą NFC, kodów QR czy adresów Megacoin URL.
 • Książka adresowa dla regularnie używanych adresów Megacoin.
-• Możliwość dodania transakcji offline, wykonywanych po połączeniu z siecią.
-• Notyfikacje systemowe o połączeniu z siecią Megacoin i otrzymanych monetach.
-• Widget na stan konta Megacoin.
+• Gdy jesteś offline, wciąż możesz zapłacić przy użyciu Bluetooth.
+• System powiadomień dla przychodzących transakcji.
+• Widget aplikacji dla stanu konta.
 
-Więcej o Megacoin dowiesz się pod adresem:
+Dowiedz się więcej o Megacoin
 http://www.megacoin.co.nz/
 
-Jeżeli chcesz wesprzeć Megacoin Wallet, kody źródłowe projektu znajdują się pod adresem:
+Jeśli chcesz przyczynić się do rozwoju Megacoin Wallet to projekt znajduje się pod adresem
 https://github.com/HashEngineering/megacoin-wallet
 
+
 Licencja: GPLv3
-Używanie jedynie na własne ryzyko!
+Używasz na własne ryzyko!
 http://www.gnu.org/licenses/gpl-3.0.en.html

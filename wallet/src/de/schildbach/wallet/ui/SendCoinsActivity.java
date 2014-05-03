@@ -17,10 +17,7 @@
 
 package de.schildbach.wallet.ui;
 
-import java.math.BigInteger;
-
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 import android.content.Context;
 import android.content.Intent;
@@ -30,28 +27,20 @@ import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 
-
 import de.schildbach.wallet.megacoin.R;
-
+import de.schildbach.wallet.PaymentIntent;
 
 /**
  * @author Andreas Schildbach
  */
 public final class SendCoinsActivity extends AbstractBindServiceActivity
 {
-	public static final String INTENT_EXTRA_ADDRESS = "address";
-	public static final String INTENT_EXTRA_ADDRESS_LABEL = "address_label";
-	public static final String INTENT_EXTRA_AMOUNT = "amount";
-	public static final String INTENT_EXTRA_BLUETOOTH_MAC = "bluetooth_mac";
+	public static final String INTENT_EXTRA_PAYMENT_INTENT = "payment_intent";
 
-	public static void start(final Context context, @Nonnull final String address, @Nullable final String addressLabel,
-			@Nullable final BigInteger amount, @Nullable final String bluetoothMac)
+	public static void start(final Context context, @Nonnull PaymentIntent paymentIntent)
 	{
 		final Intent intent = new Intent(context, SendCoinsActivity.class);
-		intent.putExtra(INTENT_EXTRA_ADDRESS, address);
-		intent.putExtra(INTENT_EXTRA_ADDRESS_LABEL, addressLabel);
-		intent.putExtra(INTENT_EXTRA_AMOUNT, amount);
-		intent.putExtra(INTENT_EXTRA_BLUETOOTH_MAC, bluetoothMac);
+		intent.putExtra(INTENT_EXTRA_PAYMENT_INTENT, paymentIntent);
 		context.startActivity(intent);
 	}
 
@@ -86,7 +75,7 @@ public final class SendCoinsActivity extends AbstractBindServiceActivity
 				return true;
 
 			case R.id.send_coins_options_help:
-				HelpDialogFragment.page(getSupportFragmentManager(), "help_send_coins");
+				HelpDialogFragment.page(getSupportFragmentManager(), R.string.help_send_coins);
 				return true;
 		}
 

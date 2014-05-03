@@ -40,11 +40,12 @@ import org.slf4j.LoggerFactory;
 
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
+import android.app.AlarmManager;
 import android.app.Application;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.StrictMode;
@@ -81,7 +82,7 @@ import de.schildbach.wallet.megacoin.R;
  */
 public class WalletApplication extends Application
 {
-	private SharedPreferences prefs;
+	private Configuration config;
 	private ActivityManager activityManager;
 
 	private Intent blockchainServiceIntent;
@@ -132,7 +133,7 @@ public class WalletApplication extends Application
 			}
 		};
 
-		prefs = PreferenceManager.getDefaultSharedPreferences(this);
+		config = new Configuration(PreferenceManager.getDefaultSharedPreferences(this));
 		activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
 
 		blockchainServiceIntent = new Intent(this, BlockchainServiceImpl.class);
@@ -147,15 +148,9 @@ public class WalletApplication extends Application
 		loadWalletFromProtobuf();
 		wallet.autosaveToFile(walletFile, 1, TimeUnit.SECONDS, new WalletAutosaveEventListener());
 
-		final int lastVersionCode = prefs.getInt(Constants.PREFS_KEY_LAST_VERSION, 0);
-		prefs.edit().putInt(Constants.PREFS_KEY_LAST_VERSION, packageInfo.versionCode).commit();
+		config.updateLastVersionCode(packageInfo.versionCode);
 
-		if (packageInfo.versionCode > lastVersionCode)
-			log.info("detected app upgrade: " + lastVersionCode + " -> " + packageInfo.versionCode);
-		else if (packageInfo.versionCode < lastVersionCode)
-			log.warn("detected app downgrade: " + lastVersionCode + " -> " + packageInfo.versionCode);
-
-		if (lastVersionCode > 0 && lastVersionCode < KEY_ROTATION_VERSION_CODE && packageInfo.versionCode >= KEY_ROTATION_VERSION_CODE)
+		if (config.versionCodeCrossed(packageInfo.versionCode, KEY_ROTATION_VERSION_CODE))
 		{
 			log.info("detected version jump crossing key rotation");
 			wallet.setKeyRotationTime(System.currentTimeMillis() / 1000);
@@ -227,6 +222,11 @@ public class WalletApplication extends Application
 			if (Constants.TEST)
 				Io.chmod(file, 0777);
 		}
+	}
+
+	public Configuration getConfiguration()
+	{
+		return config;
 	}
 
 	public Wallet getWallet()
@@ -383,7 +383,7 @@ public class WalletApplication extends Application
 
 		backupKeys();
 
-		prefs.edit().putBoolean(Constants.PREFS_KEY_REMIND_BACKUP, true).commit();
+		config.armBackupReminder();
 	}
 
 	public void saveWallet()
@@ -448,7 +448,7 @@ public class WalletApplication extends Application
 
 	public Address determineSelectedAddress()
 	{
-		final String selectedAddress = prefs.getString(Constants.PREFS_KEY_SELECTED_ADDRESS, null);
+		final String selectedAddress = config.getSelectedAddress();
 
 		Address firstAddress = null;
 		for (final ECKey key : wallet.getKeys())
@@ -528,5 +528,31 @@ public class WalletApplication extends Application
 			return 4;
 		else
 			return 6;
+	}
+
+	public static void scheduleStartBlockchainService(@Nonnull final Context context)
+	{
+		final Configuration config = new Configuration(PreferenceManager.getDefaultSharedPreferences(context));
+		final long lastUsedAgo = config.getLastUsedAgo();
+
+		// apply some backoff
+		final long alarmInterval;
+		if (lastUsedAgo < Constants.LAST_USAGE_THRESHOLD_JUST_MS)
+			alarmInterval = AlarmManager.INTERVAL_FIFTEEN_MINUTES;
+		else if (lastUsedAgo < Constants.LAST_USAGE_THRESHOLD_RECENTLY_MS)
+			alarmInterval = AlarmManager.INTERVAL_HALF_DAY;
+		else
+			alarmInterval = AlarmManager.INTERVAL_DAY;
+
+		log.info("last used {} minutes ago, rescheduling blockchain sync in roughly {} minutes", lastUsedAgo / DateUtils.MINUTE_IN_MILLIS,
+				alarmInterval / DateUtils.MINUTE_IN_MILLIS);
+
+		final AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+		final PendingIntent alarmIntent = PendingIntent.getService(context, 0, new Intent(context, BlockchainServiceImpl.class), 0);
+		alarmManager.cancel(alarmIntent);
+
+		// workaround for no inexact set() before KitKat
+		final long now = System.currentTimeMillis();
+		alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, now + alarmInterval, AlarmManager.INTERVAL_DAY, alarmIntent);
 	}
 }
