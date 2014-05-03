@@ -1,5 +1,9 @@
-
 Megacoin
+v0.2.0
+* updated to bitcoin-wallet 3.38
+* Added disconnect feature
+* Added transaction details
+
 v0.1.6
 * Fixed possible bug / optimized Kimoto Gravity Well (native)
 * updated checkpoints
