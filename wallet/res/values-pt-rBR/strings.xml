@@ -42,7 +42,7 @@
 	<string name="wallet_low_storage_dialog_msg">Megacoin Wallet usa o armazenamento interno para armazenar transações e blocos. Se seu dispositivo ficar sem espaço, ele vai parar de trabalhar e seus Megacoins estarão em risco!\n\nDeseja abrir o Gerenciador de Aplicativos para desinstalar aplicativos desnecessários?</string>
 	<string name="wallet_low_storage_dialog_button_apps">Gerenciar Aplicativos</string>
 	<string name="wallet_timeskew_dialog_title">Verifique as configurações de hora!</string>
-	<string name="wallet_timeskew_dialog_msg">A hora do seu dispositivo está incorreta por %d minutos. Você provavelmente não poderá enviar ou receber Bitcoins devido a este problema.\n\nVerifique e corrija a hora e as configurações de fuso horário.</string>
+	<string name="wallet_timeskew_dialog_msg">A hora do seu dispositivo está incorreta por %d minutos. Você provavelmente não poderá enviar ou receber Megacoins devido a este problema.\n\nVerifique e corrija a hora e as configurações de fuso horário.</string>
 
 	<string name="wallet_version_dialog_title">Nova versão disponível!</string>
 	<string name="wallet_version_dialog_msg">Esta versão corrige erros importantes. Para mais detalhes, consulte o log de alterações no Google Play.</string>
@@ -56,7 +56,7 @@
 	<string name="send_coins_fragment_receiving_address_error">Endereço Megacoin inválido!</string>
 	<string name="send_coins_fragment_receiving_address_error_cross_network">Não é possível usar o endereço %s com esta carteira!</string>
 	<string name="send_coins_fragment_receiving_address_error_cross_network_unknown">Não é possível usar um endereço de rede desconhecido com esta carteira!</string>
-	<string name="send_coins_fragment_pending">(%s BTC esperando confirmação)</string>
+	<string name="send_coins_fragment_pending">(%s MEC esperando confirmação)</string>
 	<string name="send_coins_fragment_amount_label">Quantidade a pagar</string>
 	<string name="send_coins_fragment_button_send">Enviar</string>
 	<string name="send_coins_fragment_button_back">Voltar</string>
@@ -70,13 +70,11 @@
 
 	<string name="send_coins_address_context_clear_title">Inserir novo endereço</string>
 	<string name="request_coins_activity_title">Solicitar Megacoins</string>
-	<string name="request_coins_fragment_address_label">Endereço para solicitação</string>
-	<string name="request_coins_fragment_include_address_label">inserir nome com o endereço</string>
+
 	<string name="request_coins_fragment_amount_label">Quantidade solicitada (opcional)</string>
 
 	<string name="request_coins_fragment_initiate_request_qr">Tenha o código lido pelo emissor.</string>
 	<string name="request_coins_fragment_initiate_request_nfc">Ou toque em um dispositivo NFC habilitado.</string>
-	<string name="request_coins_fragment_bluetooth_enabled">Aceitar pagamentos via Bluetooth.</string>
 	<string name="request_coins_clipboard_msg">Solicitação de Megacoin copiada</string>
 	<string name="request_coins_share_dialog_title">Compartilhar solicitação de Megacoins…</string>
 
@@ -215,5 +213,5 @@
 	<string name="button_settings">Configurações</string>
 	<string name="time_today">hoje</string>
 	<string name="address_unlabeled">(sem nome)</string>
-
+    <string name="wallet_options_disconnect">Desconectar</string>
 </resources>

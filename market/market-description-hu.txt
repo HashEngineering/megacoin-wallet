@@ -10,7 +10,6 @@ ELŐNYÖK:
 • Offline állapotban is fizethetsz - Bluetooth segítségével.
 • Rendszerüzenet Megacoin érkezésekor.
 • Widget a Megacoin egyenlegről.
->>>>>>> upstream/prod
 
 Bővebben a Megacoin-ról:
 http://www.megacoin.co.nz/

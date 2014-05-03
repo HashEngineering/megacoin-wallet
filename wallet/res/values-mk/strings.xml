@@ -55,7 +55,7 @@
 	<string name="send_coins_fragment_receiving_address_error">Невалидна Биткоин адреса!</string>
 	<string name="send_coins_fragment_receiving_address_error_cross_network">Не може да користиш %s адреса со овој паричник!</string>
 	<string name="send_coins_fragment_receiving_address_error_cross_network_unknown">Не може да користиш адреса на непозната мрежа со овој паричник!</string>
-	<string name="send_coins_fragment_pending">(BTC %s чека за потврда)</string>
+	<string name="send_coins_fragment_pending">(MEC %s чека за потврда)</string>
 	<string name="send_coins_fragment_amount_label">Сума да се плати</string>
 	<string name="send_coins_fragment_button_send">Испрати</string>
 	<string name="send_coins_fragment_button_back">Назад</string>
@@ -67,12 +67,9 @@
 	<string name="send_coins_options_empty">Испразни го паричникот</string>
 	<string name="send_coins_address_context_clear_title">Внеси нова адреса</string>
 	<string name="request_coins_activity_title">Побарај Биткоини</string>
-	<string name="request_coins_fragment_address_label">Адреса за побарување</string>
-	<string name="request_coins_fragment_include_address_label">вклучи етикета со адресата</string>
 	<string name="request_coins_fragment_amount_label">Побарувана сума (опционално)</string>
 	<string name="request_coins_fragment_initiate_request_qr">Испраќачот нека го скенира овој код.</string>
 	<string name="request_coins_fragment_initiate_request_nfc">Или допри уред кој има вклучен NFC.</string>
-	<string name="request_coins_fragment_bluetooth_enabled">Прифаќам плаќање преку Bluetooth.</string>
 	<string name="request_coins_clipboard_msg">Побарувањето за Биткони е копирано во склад</string>
 	<string name="request_coins_share_dialog_title">Сподели го побарувањето за Биткоини…</string>
 	<string name="request_coins_options_local_app_title">Побарај од локална апликација</string>
@@ -172,7 +169,7 @@
 	<string name="report_issue_dialog_mail_intent_chooser">Испрати извештај со…</string>
 	<string name="about_title">За апликацијата</string>
 	<string name="about_license_title">Лиценца</string>
-	<string name="about_credits_bitcoinj_title">Оваа апликација користи bitcoinj %s</string>
+	<string name="about_credits_bitcoinj_title">Оваа апликација користи Megacoinj %s</string>
 	<string name="about_credits_zxing_title">Оваа апликација користи \'zxing\'</string>
 	<string name="about_credits_icon_title">Оваа апликација користи икона од \'bitboy\'</string>
 	<string name="about_community_googleplus_title">Google+ заедница</string>

@@ -34,10 +34,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.google.zxing.ResultPoint;
-
-
 import de.schildbach.wallet.megacoin.R;
-
 
 /**
  * @author Andreas Schildbach

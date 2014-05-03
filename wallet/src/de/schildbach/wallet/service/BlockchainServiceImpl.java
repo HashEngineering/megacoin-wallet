@@ -92,9 +92,9 @@ import de.schildbach.wallet.ui.WalletActivity;
 import de.schildbach.wallet.util.CrashReporter;
 import de.schildbach.wallet.util.GenericUtils;
 import de.schildbach.wallet.util.WalletUtils;
-
 import de.schildbach.wallet.megacoin.R;
 import de.schildbach.wallet.util.ThrottlingWalletChangeListener;
+
 
 /**
  * @author Andreas Schildbach
@@ -230,6 +230,7 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 		notification.setWhen(System.currentTimeMillis());
 		notification.setSound(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.coins_received));
 		nm.notify(NOTIFICATION_ID_COINS_RECEIVED, notification.getNotification());
+        //nm.notify(NOTIFICATION_ID_COINS_RECEIVED, notification.build());
 	}
 
 	private final class PeerConnectivityListener extends AbstractPeerEventListener implements OnSharedPreferenceChangeListener
@@ -300,7 +301,32 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 						notification.setOngoing(true);
 						nm.notify(NOTIFICATION_ID_CONNECTED, notification.getNotification());
 					}
-
+                    /*
+                    if (!connectivityNotificationEnabled || numPeers == 0)
+                    {
+                        nm.cancel(NOTIFICATION_ID_CONNECTED);
+                    }
+                    else
+                    {
+                                            final NotificationCompat.Builder notification = new NotificationCompat.Builder(BlockchainServiceImpl.this)
+                                                        .setSmallIcon(R.drawable.stat_sys_peers, numPeers > 4 ? 4 : numPeers)
+                                                        .setContentTitle(getString(R.string.app_name))
+                                                        .setContentText(getString(R.string.notification_peers_connected_msg, numPeers))
+                                                        .setContentIntent(PendingIntent.getActivity(BlockchainServiceImpl.this, 0, new Intent(BlockchainServiceImpl.this,
+                                                                WalletActivity.class), 0))
+                                                        .setWhen(System.currentTimeMillis())
+                                                        .setOngoing(true);
+                                  //
+                                  // These calls are ignored by the support library for
+                                  // pre-4.1 devices.
+                                  //
+                                                        notification.addAction(R.drawable.ic_action_clear,
+                                                                getString(R.string.wallet_options_disconnect),
+                                                                PendingIntent.getService(BlockchainServiceImpl.this, 0,
+                                                                        new Intent(BlockchainServiceImpl.this, BlockchainServiceImpl.class)
+                                                                                .setAction(BlockchainService.ACTION_STOP_SERVICE), 0));
+                                            nm.notify(NOTIFICATION_ID_CONNECTED, notification.build());
+                    }*/
 					// send broadcast
 					sendBroadcastPeerState(numPeers);
 				}
@@ -544,6 +570,7 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 				if (isIdle)
 				{
 					log.info("idling detected, stopping service");
+                    //WalletApplication.scheduleStartBlockchainService(BlockchainServiceImpl.this);  //disconnect feature
 					stopSelf();
 				}
 			}
@@ -689,6 +716,7 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 			log.info("will remove blockchain on service shutdown");
 
 			resetBlockchainOnShutdown = true;
+            //WalletApplication.scheduleStartBlockchainService(this);  //disconnect feature
 			stopSelf();
 		}
 		else if (BlockchainService.ACTION_BROADCAST_TRANSACTION.equals(action))
@@ -706,6 +734,12 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 				log.info("peergroup not available, not broadcasting transaction " + tx.getHashAsString());
 			}
 		}
+        else if (BlockchainService.ACTION_STOP_SERVICE.equals(action))
+        {
+                    log.info("stopping self");
+                    // deliberate stop command, so don't schedule restart
+                    stopSelf();
+        }
 
 		return START_NOT_STICKY;
 	}
@@ -715,7 +749,7 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 	{
 		log.debug(".onDestroy()");
 
-		WalletApplication.scheduleStartBlockchainService(this);
+		WalletApplication.scheduleStartBlockchainService(this);  //disconnect feature
 
 		unregisterReceiver(tickReceiver);
 
@@ -773,6 +807,7 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 	public void onLowMemory()
 	{
 		log.warn("low memory detected, stopping service");
+        //WalletApplication.scheduleStartBlockchainService(BlockchainServiceImpl.this);  //disconnect feature
 		stopSelf();
 	}
 

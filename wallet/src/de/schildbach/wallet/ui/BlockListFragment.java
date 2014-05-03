@@ -23,8 +23,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.RejectedExecutionException;
 
 import javax.annotation.Nonnull;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -64,9 +68,7 @@ import de.schildbach.wallet.WalletApplication;
 import de.schildbach.wallet.service.BlockchainService;
 import de.schildbach.wallet.service.BlockchainServiceImpl;
 import de.schildbach.wallet.util.WalletUtils;
-
 import de.schildbach.wallet.megacoin.R;
-
 
 
 /**
@@ -89,6 +91,8 @@ public final class BlockListFragment extends SherlockListFragment
 	private static final int ID_TRANSACTION_LOADER = 1;
 
 	private static final int MAX_BLOCKS = 32;
+
+	private static final Logger log = LoggerFactory.getLogger(BlockListFragment.class);
 
 	@Override
 	public void onAttach(final Activity activity)
@@ -136,7 +140,7 @@ public final class BlockListFragment extends SherlockListFragment
 	{
 		loaderManager.destroyLoader(ID_TRANSACTION_LOADER);
 
-		activity.unregisterReceiver(tickReceiver);
+  	    activity.unregisterReceiver(tickReceiver);
 
 		super.onPause();
 	}
@@ -180,7 +184,7 @@ public final class BlockListFragment extends SherlockListFragment
 				switch (item.getItemId())
 				{
 					case R.id.blocks_context_browse:
-						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.EXPLORE_BASE_URL + "blocks/"
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.EXPLORE_BASE_URL + Constants.EXPLORE_BLOCK_PATH
 								+ storedBlock.getHeader().getHashAsString())));
 
 						mode.finish();
@@ -376,7 +380,14 @@ public final class BlockListFragment extends SherlockListFragment
 			@Override
 			public void onReceive(final Context context, final Intent intent)
 			{
-				forceLoad();
+				try
+				{
+					forceLoad();
+				}
+				catch (final RejectedExecutionException x)
+				{
+					log.info("rejected execution: " + BlockLoader.this.toString());
+				}
 			}
 		};
 	}

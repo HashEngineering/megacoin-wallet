@@ -29,7 +29,6 @@ import de.schildbach.wallet.ui.TransactionsListFragment.Direction;
 import de.schildbach.wallet.util.ViewPagerTabs;
 import de.schildbach.wallet.megacoin.R;
 
-
 /**
  * @author Andreas Schildbach
  */

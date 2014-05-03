@@ -27,8 +27,8 @@ import com.google.bitcoin.core.NetworkParameters;
 import com.google.bitcoin.params.MainNetParams;
 import com.google.bitcoin.params.TestNet3Params;
 import com.google.bitcoin.core.CoinDefinition;
-
 import de.schildbach.wallet.megacoin.R;
+
 
 /**
  * @author Andreas Schildbach
@@ -40,11 +40,10 @@ public class Constants
 	public static final NetworkParameters NETWORK_PARAMETERS = TEST ? TestNet3Params.get() : MainNetParams.get();
 	private static final String FILENAME_NETWORK_SUFFIX = NETWORK_PARAMETERS.getId().equals(NetworkParameters.ID_MAINNET) ? "" : "-testnet";
 
-	public static final String WALLET_FILENAME = "wallet" + FILENAME_NETWORK_SUFFIX;
-
 	public static final String WALLET_FILENAME_PROTOBUF = "wallet-protobuf" + FILENAME_NETWORK_SUFFIX;
 
 	public static final String WALLET_KEY_BACKUP_BASE58 = "key-backup-base58" + FILENAME_NETWORK_SUFFIX;
+	public static final String WALLET_KEY_BACKUP_PROTOBUF = "key-backup-protobuf" + FILENAME_NETWORK_SUFFIX;
 
 	public static final File EXTERNAL_WALLET_BACKUP_DIR = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
 	public static final String EXTERNAL_WALLET_KEY_BACKUP = CoinDefinition.coinName +"-wallet-keys" + FILENAME_NETWORK_SUFFIX;
@@ -57,11 +56,16 @@ public class Constants
 	private static final String EXPLORE_BASE_URL_TEST = CoinDefinition.BLOCKEXPLORER_BASE_URL_TEST;
 	public static final String EXPLORE_BASE_URL = NETWORK_PARAMETERS.getId().equals(NetworkParameters.ID_MAINNET) ? EXPLORE_BASE_URL_PROD
 			: EXPLORE_BASE_URL_TEST;
+    public static final String EXPLORE_ADDRESS_PATH  = CoinDefinition.BLOCKEXPLORER_ADDRESS_PATH;
+    public static final String EXPLORE_TRANSACTION_PATH  = CoinDefinition.BLOCKEXPLORER_TRANSACTION_PATH;
+    public static final String EXPLORE_BLOCK_PATH  = CoinDefinition.BLOCKEXPLORER_BLOCK_PATH;
 
-	public static final String MIMETYPE_PAYMENTREQUEST = "application/"+CoinDefinition.coinName.toLowerCase()+"-paymentrequest"; // BIP 71
-	public static final String MIMETYPE_PAYMENT = "application/"+CoinDefinition.coinName.toLowerCase()+"-payment"; // BIP 71
-	public static final String MIMETYPE_PAYMENTACK = "application/"+CoinDefinition.coinName.toLowerCase()+"-paymentack"; // BIP 71
+
+	public static final String MIMETYPE_PAYMENTREQUEST = "application/"+ CoinDefinition.coinTicker.toLowerCase() +"-paymentrequest"; // BIP 71
+	public static final String MIMETYPE_PAYMENT = "application/"+ CoinDefinition.coinTicker.toLowerCase() +"-payment"; // BIP 71
+	public static final String MIMETYPE_PAYMENTACK = "application/"+ CoinDefinition.coinTicker.toLowerCase() +"-paymentack"; // BIP 71
 	public static final String MIMETYPE_TRANSACTION = "application/x-" + CoinDefinition.coinTicker.toLowerCase() + "tx";
+	public static final String MIMETYPE_BACKUP_PRIVATE_KEYS = "x-"+CoinDefinition.coinName.toLowerCase()+"/private-keys";
 
 	public static final int MAX_NUM_CONFIRMATIONS = 7;
 	public static final String USER_AGENT = CoinDefinition.coinName +" Wallet";
@@ -86,7 +90,8 @@ public class Constants
 
 	public static final int BTC_MAX_PRECISION = 8;
 	public static final int MBTC_MAX_PRECISION = 5;
-	public static final int LOCAL_PRECISION = 6;
+
+	public static final int LOCAL_PRECISION = 8;        //altcoins need more digits in BTC
 
 	public static final String DONATION_ADDRESS = CoinDefinition.DONATION_ADDRESS;
 	public static final String REPORT_EMAIL = "hashengineeringsolutions@gmail.com";
@@ -95,10 +100,11 @@ public class Constants
 	public static final String REPORT_SUBJECT_CRASH = "Crash report";
 
 	public static final String LICENSE_URL = "http://www.gnu.org/licenses/gpl-3.0.txt";
-    public static final String FORKED_FROM_SOURCE = "based on bitcoin-wallet 3.29\n";
-	public static final String SOURCE_URL = "https://github.com/HashEngineering/" + CoinDefinition.coinName + "-wallet";
-	public static final String BINARY_URL = "http://code.google.com/p/bitcoin-wallet/downloads/list";
-	public static final String CREDITS_BITCOINJ_URL = "https://github.com/HashEngineering/" + CoinDefinition.coinName + "j";
+    public static final String FORKED_FROM_SOURCE = "based on bitcoin-wallet 3.38\n";
+    public static final String FORKED_FROM_SOURCE_BITCOINJ = "based on bitcoinj 0.12\n";
+	public static final String SOURCE_URL = "https://github.com/HashEngineering/" + CoinDefinition.coinName.toLowerCase() + "-wallet";
+	public static final String BINARY_URL = "https://github.com/HashEngineering/"+ CoinDefinition.coinName.toLowerCase() +"-wallet/releases";
+	public static final String CREDITS_BITCOINJ_URL = "https://github.com/HashEngineering/" + CoinDefinition.coinName.toLowerCase() + "j";
 	public static final String CREDITS_ZXING_URL = "http://code.google.com/p/zxing/";
     public static final String CREDITS_WEBSITE_URL = "http://megacoin.co.nz";
     public static final String CREDITS_FORUM_URL = "http://forum.megacoin.co.nz";

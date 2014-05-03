@@ -76,8 +76,6 @@ import com.google.bitcoin.core.AddressFormatException;
 import com.google.bitcoin.core.ECKey;
 import com.google.bitcoin.core.Transaction;
 import com.google.bitcoin.core.Wallet;
-
-
 import de.schildbach.wallet.Configuration;
 import de.schildbach.wallet.Constants;
 import de.schildbach.wallet.PaymentIntent;
@@ -90,10 +88,8 @@ import de.schildbach.wallet.util.HttpGetThread;
 import de.schildbach.wallet.util.Iso8601Format;
 import de.schildbach.wallet.util.Nfc;
 import de.schildbach.wallet.util.WalletUtils;
-
-import com.google.bitcoin.core.*;
-
 import de.schildbach.wallet.megacoin.R;
+import com.google.bitcoin.core.CoinDefinition;
 
 
 /**
@@ -234,7 +230,7 @@ public final class WalletActivity extends AbstractOnDemandServiceActivity
 		menu.findItem(R.id.wallet_options_import_keys).setEnabled(
 				Environment.MEDIA_MOUNTED.equals(externalStorageState) || Environment.MEDIA_MOUNTED_READ_ONLY.equals(externalStorageState));
 		menu.findItem(R.id.wallet_options_export_keys).setEnabled(Environment.MEDIA_MOUNTED.equals(externalStorageState));
-
+        menu.findItem(R.id.wallet_options_disconnect).setVisible(true);
 		return true;
 	}
 
@@ -274,6 +270,10 @@ public final class WalletActivity extends AbstractOnDemandServiceActivity
 			case R.id.wallet_options_export_keys:
 				handleExportKeys();
 				return true;
+
+            case R.id.wallet_options_disconnect:
+                handleDisconnect();
+                return true;
 
 			case R.id.wallet_options_preferences:
 				startActivity(new Intent(this, PreferencesActivity.class));
@@ -320,6 +320,11 @@ public final class WalletActivity extends AbstractOnDemandServiceActivity
 
 		config.disarmBackupReminder();
 	}
+    private void handleDisconnect()
+    {
+    	getWalletApplication().stopBlockchainService();
+    	finish();
+    }
 
 	private void handleDonate()
 	{
@@ -542,9 +547,7 @@ public final class WalletActivity extends AbstractOnDemandServiceActivity
 
 	private Dialog createChangeLogDialog()
 	{
-		final DialogBuilder dialog = new DialogBuilder(this);
-		dialog.setIcon(R.drawable.ic_menu_warning);
-		dialog.setTitle(R.string.wallet_precision_warning_dialog_title);
+		final DialogBuilder dialog = DialogBuilder.warn(this, R.string.wallet_precision_warning_dialog_title);
 		dialog.setMessage(R.string.wallet_precision_warning_dialog_msg);
 		dialog.setPositiveButton(R.string.button_dismiss, null);
 		dialog.setNegativeButton(R.string.button_settings, new DialogInterface.OnClickListener()
@@ -563,9 +566,7 @@ public final class WalletActivity extends AbstractOnDemandServiceActivity
 		final Intent stickyIntent = registerReceiver(null, new IntentFilter(Intent.ACTION_DEVICE_STORAGE_LOW));
 		if (stickyIntent != null)
 		{
-			final DialogBuilder dialog = new DialogBuilder(this);
-			dialog.setIcon(R.drawable.ic_menu_warning);
-			dialog.setTitle(R.string.wallet_low_storage_dialog_title);
+			final DialogBuilder dialog = DialogBuilder.warn(this, R.string.wallet_low_storage_dialog_title);
 			dialog.setMessage(R.string.wallet_low_storage_dialog_msg);
 			dialog.setPositiveButton(R.string.wallet_low_storage_dialog_button_apps, new DialogInterface.OnClickListener()
 			{
@@ -586,9 +587,9 @@ public final class WalletActivity extends AbstractOnDemandServiceActivity
 		final PackageInfo packageInfo = getWalletApplication().packageInfo();
 		final int versionNameSplit = packageInfo.versionName.indexOf('-');
 		final String base = Constants.VERSION_URL + (versionNameSplit >= 0 ? packageInfo.versionName.substring(versionNameSplit) : "");
-		final String url = base + "?current=" + packageInfo.versionCode;
+		final String url = base + "?package=" + packageInfo.packageName + "&current=" + packageInfo.versionCode;
 
-		new HttpGetThread(getAssets(), url)
+		/*new HttpGetThread(getAssets(), url, application.httpUserAgent())
 		{
 			@Override
 			protected void handleLine(final String line, final long serverTime)
@@ -648,9 +649,9 @@ public final class WalletActivity extends AbstractOnDemandServiceActivity
 					CrashReporter.saveBackgroundTrace(new RuntimeException(url, x), packageInfo);
 				}
 			}
-		}.start();
+		}.start();*/
 
-		if (!config.hasBtcPrecision()
+		if (!config.hasBtcPrecision() && CoinDefinition.coinPrecision != CoinDefinition.CoinPrecision.Coins
 				&& config.changeLogVersionCodeCrossed(application.packageInfo().versionCode, DEFAULT_PRECISION_CHANGE_VERSION_CODE))
 		{
 			showDialog(DIALOG_CHANGELOG);
@@ -718,9 +719,7 @@ public final class WalletActivity extends AbstractOnDemandServiceActivity
 		final PackageManager pm = getPackageManager();
 		final Intent settingsIntent = new Intent(android.provider.Settings.ACTION_DATE_SETTINGS);
 
-		final DialogBuilder dialog = new DialogBuilder(this);
-		dialog.setIcon(R.drawable.ic_menu_warning);
-		dialog.setTitle(R.string.wallet_timeskew_dialog_title);
+		final DialogBuilder dialog = DialogBuilder.warn(this, R.string.wallet_timeskew_dialog_title);
 		dialog.setMessage(getString(R.string.wallet_timeskew_dialog_msg, diffMinutes));
 
 		if (pm.resolveActivity(settingsIntent, 0) != null)
@@ -746,9 +745,7 @@ public final class WalletActivity extends AbstractOnDemandServiceActivity
 		final Intent marketIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(String.format(Constants.MARKET_APP_URL, getPackageName())));
 		final Intent binaryIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.BINARY_URL));
 
-		final DialogBuilder dialog = new DialogBuilder(this);
-		dialog.setIcon(R.drawable.ic_menu_warning);
-		dialog.setTitle(R.string.wallet_version_dialog_title);
+		final DialogBuilder dialog = DialogBuilder.warn(this, R.string.wallet_version_dialog_title);
 		dialog.setMessage(getString(R.string.wallet_version_dialog_msg));
 
 		if (pm.resolveActivity(marketIntent, 0) != null)
@@ -851,7 +848,7 @@ public final class WalletActivity extends AbstractOnDemandServiceActivity
 			}
 			else
 			{
-				dialog.setNeutralButton(R.string.button_dismiss, null);
+				dialog.singleDismissButton(null);
 			}
 			dialog.show();
 
@@ -859,9 +856,7 @@ public final class WalletActivity extends AbstractOnDemandServiceActivity
 		}
 		catch (final IOException x)
 		{
-			final DialogBuilder dialog = new DialogBuilder(this);
-			dialog.setIcon(R.drawable.ic_menu_warning);
-			dialog.setTitle(R.string.import_export_keys_dialog_failure_title);
+			final DialogBuilder dialog = DialogBuilder.warn(this, R.string.import_export_keys_dialog_failure_title);
 			dialog.setMessage(getString(R.string.import_keys_dialog_failure, x.getMessage()));
 			dialog.setPositiveButton(R.string.button_dismiss, null);
 			dialog.setNegativeButton(R.string.button_retry, new DialogInterface.OnClickListener()
@@ -921,11 +916,9 @@ public final class WalletActivity extends AbstractOnDemandServiceActivity
 		}
 		catch (final IOException x)
 		{
-			final DialogBuilder dialog = new DialogBuilder(this);
-			dialog.setIcon(R.drawable.ic_menu_warning);
-			dialog.setTitle(R.string.import_export_keys_dialog_failure_title);
+			final DialogBuilder dialog = DialogBuilder.warn(this, R.string.import_export_keys_dialog_failure_title);
 			dialog.setMessage(getString(R.string.export_keys_dialog_failure, x.getMessage()));
-			dialog.setNeutralButton(R.string.button_dismiss, null);
+			dialog.singleDismissButton(null);
 			dialog.show();
 
 			log.error("problem writing private keys", x);
@@ -939,7 +932,8 @@ public final class WalletActivity extends AbstractOnDemandServiceActivity
 		intent.putExtra(Intent.EXTRA_TEXT,
 				getString(R.string.export_keys_dialog_mail_text) + "\n\n" + String.format(Constants.WEBMARKET_APP_URL, getPackageName()) + "\n\n"
 						+ Constants.SOURCE_URL + '\n');
-		intent.setType("x-"+ CoinDefinition.coinName.toLowerCase()+"/private-keys");
+
+		intent.setType(Constants.MIMETYPE_BACKUP_PRIVATE_KEYS);
 		intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
 
 		try

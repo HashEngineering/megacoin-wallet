@@ -51,8 +51,6 @@ import de.schildbach.wallet.WalletApplication;
 import de.schildbach.wallet.service.BlockchainService;
 import de.schildbach.wallet.util.WalletUtils;
 import de.schildbach.wallet.megacoin.R;
-
-
 /**
  * @author Andreas Schildbach
  */
@@ -303,7 +301,7 @@ public final class WalletBalanceFragment extends Fragment
 		@Override
 		public void onLoadFinished(final Loader<Cursor> loader, final Cursor data)
 		{
-			if (data != null)
+			if (data != null && data.getCount() > 0)
 			{
 				data.moveToFirst();
 				exchangeRate = ExchangeRatesProvider.getExchangeRate(data);

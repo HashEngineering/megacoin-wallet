@@ -55,7 +55,7 @@
 	<string name="send_coins_fragment_receiving_address_error">Malvalida Bitmonadreso!</string>
 	<string name="send_coins_fragment_receiving_address_error_cross_network">Ne eblas uzi %s adreson kun ĉi tiu monujo!</string>
 	<string name="send_coins_fragment_receiving_address_error_cross_network_unknown">Ne eblas uzi adreson de nekonata reto kun ĉi tiu monujo!</string>
-	<string name="send_coins_fragment_pending">(BTC %s atendadi konfirmon)</string>
+	<string name="send_coins_fragment_pending">(MEC %s atendadi konfirmon)</string>
 	<string name="send_coins_fragment_amount_label">Kvanto pagi</string>
 	<string name="send_coins_fragment_button_send">Sendu</string>
 	<string name="send_coins_fragment_button_back">Reen</string>
@@ -67,12 +67,9 @@
 	<string name="send_coins_options_empty">Malplena monujo</string>
 	<string name="send_coins_address_context_clear_title">Entajpi novan adreson</string>
 	<string name="request_coins_activity_title">Peti Bitmonojn</string>
-	<string name="request_coins_fragment_address_label">Adreso por peti al</string>
-	<string name="request_coins_fragment_include_address_label">inkluzivi etikedon kun adreso</string>
 	<string name="request_coins_fragment_amount_label">Petita kvanto (fakultativa)</string>
 	<string name="request_coins_fragment_initiate_request_qr">Havas ĉi tiun kodon skanitan per la sendinto.</string>
 	<string name="request_coins_fragment_initiate_request_nfc">Aŭ frapetu NFC-eblan apararton.</string>
-	<string name="request_coins_fragment_bluetooth_enabled">Akceptante pagoj per Bluetooth.</string>
 	<string name="request_coins_clipboard_msg">Bitmona peto kopiita al tondujo</string>
 	<string name="request_coins_share_dialog_title">Kunhavigi peton por Bitmonoj…</string>
 	<string name="request_coins_options_local_app_title">Peti el loka aplikaĵo</string>
@@ -172,7 +169,7 @@
 	<string name="report_issue_dialog_mail_intent_chooser">Sendi reporton uzante…</string>
 	<string name="about_title">Pri</string>
 	<string name="about_license_title">Licenco</string>
-	<string name="about_credits_bitcoinj_title">Ĉi tiu aplikaĵo uzas bitcoinj-n %s</string>
+	<string name="about_credits_bitcoinj_title">Ĉi tiu aplikaĵo uzas Megacoinj-n %s</string>
 	<string name="about_credits_zxing_title">Ĉi tiu aplikaĵo uzas \'zxing\'-n</string>
 	<string name="about_credits_icon_title">Ĉi tiu aplikaĵo uzas bildsimbolon per \'bitboy\'</string>
 	<string name="about_community_googleplus_title">\"Google+\" Komunumo</string>

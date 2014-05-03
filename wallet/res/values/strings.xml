@@ -42,19 +42,21 @@
 	<string name="wallet_low_storage_dialog_msg">Megacoin Wallet uses internal storage for remembering transactions and blocks. If it runs out of space, it will stop working and your Megacoins will be at risk!\n\nDo you want to open the Application Manager to uninstall unneeded apps?</string>
 	<string name="wallet_low_storage_dialog_button_apps">Manage Apps</string>
 	<string name="wallet_timeskew_dialog_title">Check your time settings!</string>
-
 	<string name="wallet_timeskew_dialog_msg">Your device time is off by %d minutes. You probably cannot send or receive Megacoins due to this problem.\n\nYou should check and correct your time and timezone settings.</string>
 	<string name="wallet_version_dialog_title">A new version is available!</string>
 	<string name="wallet_version_dialog_msg">This version fixes important bugs. For details, see the change log on Google Play.</string>
 	<string name="wallet_version_dialog_button_market">Google Play</string>
 	<string name="wallet_version_dialog_button_binary">Download</string>
 	<string name="wallet_precision_warning_dialog_title">Change of denomination</string>
-	<string name="wallet_precision_warning_dialog_msg">Denomination has been changed from bitcoin (BTC) to millibitcoin (mBTC). All amounts are multiplied by a factor of 1000.\n\nYou can revert this change in the settings.</string>
+	<string name="wallet_precision_warning_dialog_msg">Denomination has been changed from Megacoin (MEC) to milliMegacoin (mMEC). All amounts are multiplied by a factor of 1000.\n\nYou can revert this change in the settings.</string>
 	<string name="wallet_old_sdk_dialog_title">Android version is out of date</string>
 	<string name="wallet_old_sdk_dialog_message">Chances are that one of the next releases of Megacoin Wallet will not support your device any more. In some cases, it can get difficult to spend coins on this device.\n\nUnless you know what you are doing, it is recommended to move out your coins soon.</string>
 	<string name="send_coins_activity_title">Send Megacoins</string>
 	<string name="send_coins_fragment_payee_verified_by">verified by: %s</string>
 	<string name="send_coins_fragment_payee_verified_by_unknown">unknown</string>
+	<string name="send_coins_fragment_request_payment_request_progress">Fetching signature from %s…</string>
+	<string name="send_coins_fragment_request_payment_request_failed_title">Fetching signature failed</string>
+	<string name="send_coins_fragment_request_payment_request_wrong_signature">Wrong signature!</string>
 	<string name="send_coins_fragment_receiving_address_label">Pay to</string>
 	<string name="send_coins_fragment_receiving_address_hint">type address or name</string>
 	<string name="send_coins_fragment_receiving_address_error">Invalid Megacoin Address!</string>
@@ -72,7 +74,7 @@
 	<string name="send_coins_fragment_button_back">Back</string>
 	<string name="send_coins_fragment_insufficient_money_title">Not enough available coins</string>
 	<string name="send_coins_fragment_insufficient_money_msg1">You\'re missing %s.</string>
-	<string name="send_coins_fragment_insufficient_money_msg2">Do you want to pay all you have?</string>
+	<string name="send_coins_fragment_insufficient_money_msg2">Do you want to pay with all you have?</string>
 	<string name="send_coins_preparation_msg">Signing…</string>
 	<string name="send_coins_sending_msg">Sending…</string>
 	<string name="send_coins_sent_msg">Sent!</string>
@@ -84,6 +86,7 @@
 	<string name="request_coins_fragment_address_label">Address to request to</string>
 	<string name="request_coins_fragment_include_address_label">include label with address</string>
 	<string name="request_coins_fragment_amount_label">Requested amount (optional)</string>
+	<string name="request_coins_fragment_accept_bluetooth_payment">Accept payment via Bluetooth for more reliable processing</string>
 	<string name="request_coins_fragment_initiate_request_qr">Have this code scanned by the sender.</string>
 	<string name="request_coins_fragment_initiate_request_nfc">Or tap an NFC enabled device.</string>
 	<string name="request_coins_fragment_bluetooth_enabled">Accepting payments via Bluetooth.</string>
@@ -125,6 +128,7 @@
 	<string name="peer_list_row_ping_time">⇆ %d&#x2009;ms</string>
 	<string name="import_keys_dialog_title">Restore private keys</string>
 	<string name="import_keys_dialog_message">Pick a private keys backup file from external or app-private storage:</string>
+	<string name="import_keys_dialog_warning">Important: Do not load private keys from dubious sources! Others can gain control over your funds if you do.</string>
 	<string name="import_keys_dialog_file_security_encrypted">password encrypted</string>
 	<string name="import_keys_dialog_file_security_unencrypted">unencrypted</string>
 	<string name="import_keys_dialog_file_security_external">external storage</string>
@@ -158,6 +162,7 @@
 	<string name="input_parser_invalid_bitcoin_uri">Invalid Megacoin URI:\n%s</string>
 	<string name="input_parser_invalid_address">Got invalid Megacoin address!\n(Mixing up Mainnet/Testnet?)</string>
 	<string name="input_parser_invalid_paymentrequest">Invalid payment request:\n%s</string>
+	<string name="input_parser_unverifyable_paymentrequest">Cannot verify payment request:\n%s</string>
 	<string name="input_parser_invalid_transaction">Invalid transaction:\n%s</string>
 	<string name="preferences_activity_title">Settings</string>
 	<string name="preferences_category_main">Preferences</string>
@@ -181,7 +186,7 @@
 	<string name="preferences_initiate_reset_dialog_positive">Reset</string>
 	<string name="report_issue_dialog_title_issue">Report issue</string>
 	<string name="report_issue_dialog_title_crash">Previous crash detected</string>
-	<string name="report_issue_dialog_message_issue">Please describe your issue precisely enough so a developer can reproduce.</string>
+	<string name="report_issue_dialog_message_issue">Please describe your issue precisely enough to be reproduced. If it is specific to your wallet, consider appending the dump.</string>
 	<string name="report_issue_dialog_message_crash">Would you like to send a crash report, helping to fix this issue in the future?</string>
 	<string name="report_issue_dialog_description">issue description</string>
 	<string name="report_issue_dialog_report">Report</string>
@@ -193,7 +198,7 @@
 	<string name="report_issue_dialog_mail_intent_failed">Sending report failed.</string>
 	<string name="about_title">About</string>
 	<string name="about_license_title">License</string>
-	<string name="about_credits_bitcoinj_title">This app is using Megacoinj %s (based on bitcoinj 0.11)</string>
+	<string name="about_credits_bitcoinj_title">This app is using Megacoinj %s (based on bitcoinj 0.12)</string>
 	<string name="about_credits_zxing_title">"This app is using 'zxing'"</string>
 
 	<string name="about_credits_icon_title">"This app is using an icon by 'ohiwastedmylif'"</string>
@@ -234,5 +239,10 @@
 	<string name="action_browse">Browse</string>
 	<string name="time_today">today</string>
 	<string name="address_unlabeled">(unlabeled)</string>
+    <string name="wallet_options_disconnect">Disconnect</string>
+	<!-- generic error messages -->
+	<string name="error_io">I/O error: %s</string>
+	<string name="error_http">HTTP error %1$s:\n%2$s</string>
+
 
 </resources>

@@ -31,7 +31,6 @@ import android.widget.ImageView;
 import de.schildbach.wallet.megacoin.R;
 
 
-
 /**
  * @author Andreas Schildbach
  */

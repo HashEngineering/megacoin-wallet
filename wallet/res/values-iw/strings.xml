@@ -57,13 +57,9 @@
 	<string name="send_coins_sending_msg">שולח…</string>
 	<string name="send_coins_sent_msg">נשלח!</string>
 	<string name="send_coins_failed_msg">נכשל!</string>
-	<string name="send_coins_add_address_dialog_title">האם להוסיף את הנמען לפסר הכתובות ?</string>
-	<string name="send_coins_add_address_dialog_button_add">הוסף כתובת</string>
 	<string name="send_coins_error_msg">בעיה בשליחת מטבעות</string>
 	<string name="send_coins_address_context_clear_title">הקש כתובת חדשה</string>
 	<string name="request_coins_activity_title">בקש ביטקוין</string>
-	<string name="request_coins_fragment_address_label">כתובת לבקשה</string>
-	<string name="request_coins_fragment_include_address_label">כלול שם עם הכתובת</string>
 	<string name="request_coins_fragment_amount_label">כמות לבקשה</string>
 	<string name="request_coins_fragment_initiate_request_qr">תן לשולח לסרוק ברקוד זה</string>
 	<string name="request_coins_fragment_initiate_request_nfc">או גע עם מכשיר  NFC</string>
@@ -177,5 +173,5 @@
 	<string name="button_settings">הגדרות</string>
 	<string name="time_today">היום</string>
 	<string name="address_unlabeled">(לא מסומן)</string>
-
+    <string name="wallet_options_disconnect">מנותק</string>
 </resources>

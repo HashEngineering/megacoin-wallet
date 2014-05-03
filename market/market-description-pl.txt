@@ -16,7 +16,6 @@ http://www.megacoin.co.nz/
 Jeśli chcesz przyczynić się do rozwoju Megacoin Wallet to projekt znajduje się pod adresem
 https://github.com/HashEngineering/megacoin-wallet
 
-
 Licencja: GPLv3
 Używasz na własne ryzyko!
 http://www.gnu.org/licenses/gpl-3.0.en.html

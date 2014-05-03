@@ -11,11 +11,13 @@ FUNKCIE:
 • Notifikácie v stavovej lište pri prijatí Megacoinov.
 • Widget s celkovým zostatkom.
 
+
 Viac informácií o Megacoine
-http://bitcoin.org
+http://www.megacoin.co.nz/
 
 Ak chcete prispieť do projektu Megacoin Wallet nájdete ho na adrese
-https://github.com/schildbach/bitcoin-wallet
+https://github.com/HashEngineering/megacoin-wallet
+
 
 Licencia: GPLv3
 Použitie len na vlastné riziko!

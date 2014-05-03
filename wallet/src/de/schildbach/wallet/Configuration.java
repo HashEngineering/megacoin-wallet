@@ -47,8 +47,6 @@ public class Configuration
 	public static final String PREFS_KEY_DISCLAIMER = "disclaimer";
 	public static final String PREFS_KEY_SELECTED_ADDRESS = "selected_address";
 	private static final String PREFS_KEY_LABS_QR_PAYMENT_REQUEST = "labs_qr_payment_request";
-	private static final String PREFS_KEY_LABS_NFC_PAYMENT_REQUEST = "labs_nfc_payment_request";
-	public static final String PREFS_KEY_LABS_BLUETOOTH_OFFLINE_TRANSACTIONS = "labs_bluetooth_offline_transactions";
 
 	private static final String PREFS_KEY_LAST_VERSION = "last_version";
 	private static final String PREFS_KEY_LAST_USED = "last_used";
@@ -59,7 +57,7 @@ public class Configuration
 	private static final String PREFS_KEY_CHANGE_LOG_VERSION = "change_log_version";
 	public static final String PREFS_KEY_REMIND_BACKUP = "remind_backup";
 
-	private static final String PREFS_DEFAULT_BTC_PRECISION = "2/3";
+	private static final String PREFS_DEFAULT_BTC_PRECISION = "2/0";
 
 	private static final Logger log = LoggerFactory.getLogger(Configuration.class);
 
@@ -155,16 +153,6 @@ public class Configuration
 	public boolean getQrPaymentRequestEnabled()
 	{
 		return prefs.getBoolean(PREFS_KEY_LABS_QR_PAYMENT_REQUEST, false);
-	}
-
-	public boolean getNfcPaymentRequestEnabled()
-	{
-		return prefs.getBoolean(PREFS_KEY_LABS_NFC_PAYMENT_REQUEST, false);
-	}
-
-	public boolean getBluetoothOfflineTransactionsEnabled()
-	{
-		return prefs.getBoolean(PREFS_KEY_LABS_BLUETOOTH_OFFLINE_TRANSACTIONS, false);
 	}
 
 	public boolean versionCodeCrossed(final int currentVersionCode, final int triggeringVersionCode)

@@ -41,6 +41,7 @@
 	<string name="wallet_low_storage_dialog_msg">Megacoin Wallet menggunakan penyimpanan internal untuk meyimpan transaksi dan blok. Jika kekurangan ruang, ia akan berhenti berfungsi dan Megacoin Anda dlm bahaya!\n\nApakah Anda ingin buka Manajer Aplikasi untuk menghapus apl tak terpakai?</string>
 	<string name="wallet_low_storage_dialog_button_apps">Mengelola Apl</string>
 	<string name="wallet_timeskew_dialog_title">Periksa pengaturan waktu!</string>
+	<string name="wallet_timeskew_dialog_msg">Waktu perangkat Anda tertinggal %d menit. Anda mungkin tidak dapat mengirim atau menerima Megacoin karena hal ini.\n\nAnda seharusnya memeriksa dan atur kembali pengaturan waktu dan zona waktu Anda.</string>
 	<string name="wallet_version_dialog_title">Versi baru tersedia!</string>
 	<string name="wallet_version_dialog_msg">Versi ini perbaikan bug penting. Untuk rincian, lihatlah catatan perubahan di Google Play.</string>
 	<string name="wallet_version_dialog_button_market">Google Play</string>
@@ -53,6 +54,7 @@
 	<string name="send_coins_fragment_receiving_address_error">Alamat Megacoin Salah!</string>
 	<string name="send_coins_fragment_receiving_address_error_cross_network">Tidak dapat menggunakan %s dgn dompet ini!</string>
 	<string name="send_coins_fragment_receiving_address_error_cross_network_unknown">Tidak dapat menggunakan alamat dari jaringan tak diketahui dgn dompet ini!</string>
+	<string name="send_coins_fragment_pending">(MEC %s menunggu konfirmasi)</string>
 	<string name="send_coins_fragment_amount_label">Jumlah pembayaran</string>
 	<string name="send_coins_fragment_button_send">Kirim</string>
 	<string name="send_coins_fragment_button_back">Kembali</string>
@@ -192,5 +194,5 @@
 	<string name="button_settings">Pengaturan</string>
 	<string name="time_today">hari ini</string>
 	<string name="address_unlabeled">(tak berlabel)</string>
-
+    <string name="wallet_options_disconnect">Putuskan</string>
 </resources>

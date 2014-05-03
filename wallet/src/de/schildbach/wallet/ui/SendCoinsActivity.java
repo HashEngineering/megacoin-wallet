@@ -26,7 +26,6 @@ import android.os.Bundle;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
-
 import de.schildbach.wallet.megacoin.R;
 import de.schildbach.wallet.PaymentIntent;
 

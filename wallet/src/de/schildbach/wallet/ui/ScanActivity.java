@@ -58,9 +58,7 @@ import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.QRCodeReader;
 
 import de.schildbach.wallet.camera.CameraManager;
-
 import de.schildbach.wallet.megacoin.R;
-
 
 /**
  * @author Andreas Schildbach
@@ -363,14 +361,11 @@ public final class ScanActivity extends Activity implements SurfaceHolder.Callba
 	@Override
 	protected Dialog onCreateDialog(final int id)
 	{
-		final DialogBuilder dialog = new DialogBuilder(this);
-
 		if (id == DIALOG_CAMERA_PROBLEM)
 		{
-			dialog.setIcon(R.drawable.ic_menu_warning);
-			dialog.setTitle(R.string.scan_camera_problem_dialog_title);
+			final DialogBuilder dialog = DialogBuilder.warn(this, R.string.scan_camera_problem_dialog_title);
 			dialog.setMessage(R.string.scan_camera_problem_dialog_message);
-			dialog.setNeutralButton(R.string.button_dismiss, new OnClickListener()
+			dialog.singleDismissButton(new OnClickListener()
 			{
 				@Override
 				public void onClick(final DialogInterface dialog, final int which)
@@ -386,8 +381,12 @@ public final class ScanActivity extends Activity implements SurfaceHolder.Callba
 					finish();
 				}
 			});
-		}
 
-		return dialog.create();
+			return dialog.create();
+		}
+		else
+		{
+			throw new IllegalArgumentException();
+		}
 	}
 }

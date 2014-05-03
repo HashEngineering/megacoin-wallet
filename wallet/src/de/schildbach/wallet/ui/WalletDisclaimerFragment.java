@@ -40,7 +40,6 @@ import de.schildbach.wallet.WalletApplication;
 import de.schildbach.wallet.service.BlockchainService;
 import de.schildbach.wallet.megacoin.R;
 
-
 /**
  * @author Andreas Schildbach
  */
