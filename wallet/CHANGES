@@ -1,4 +1,7 @@
 Megacoin
+v0.3.0
+* removed beta status
+
 v0.2.0
 * updated to bitcoin-wallet 3.38
 * Added disconnect feature

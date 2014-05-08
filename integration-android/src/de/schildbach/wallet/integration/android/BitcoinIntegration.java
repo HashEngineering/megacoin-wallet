@@ -272,7 +272,7 @@ public final class BitcoinIntegration
 		Toast.makeText(context, "No Megacoin application found.\nPlease install Megacoin Wallet.", Toast.LENGTH_LONG).show();
 
 		final Intent marketIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=de.schildbach.wallet.megacoin"));
-		final Intent binaryIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://code.google.com/p/bitcoin-wallet/downloads/list"));
+		final Intent binaryIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/HashEngineering/megacoin-wallet/releases"));
 
 		final PackageManager pm = context.getPackageManager();
 		if (pm.resolveActivity(marketIntent, 0) != null)
