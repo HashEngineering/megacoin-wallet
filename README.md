@@ -1,4 +1,8 @@
-Welcome to _Megacoin Wallet_, a standalone Megacoin payment app for your Android device!
+<div align="center"><h1>Welcome to <b>Songcoin android wallet..</b></h1></div>
+
+<div align="center">A android wallet implementation of the Songcoin protocol</div>
+
+<div align="center"><img src="http://www.songcoin.org/wp-content/uploads/2014/08/logo.png" /></div>
 
 This project contains several sub-projects:
 
