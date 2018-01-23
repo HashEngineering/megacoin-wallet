@@ -46,7 +46,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.json:json:20080701" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.android:annotations:4.1.1.4" level="project" />
     <orderEntry type="library" name="Maven: com.google.android:support-v4:r7" level="project" />
-    <orderEntry type="module" module-name="megacoinj" />
+    <orderEntry type="module" module-name="songcoinj" />
     <orderEntry type="library" name="Maven: com.madgag:sc-light-jdk15on:1.47.0.2" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:2.5.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:13.0.1" level="project" />
