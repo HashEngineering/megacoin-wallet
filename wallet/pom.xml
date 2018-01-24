@@ -7,7 +7,7 @@
 	<artifactId>wallet</artifactId>
 	<packaging>apk</packaging>
 
-	<version>0.2.0</version>
+	<version>1.01.1</version>
 	<name>Songcoin Wallet</name>
 
 	<parent>
