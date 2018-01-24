@@ -259,27 +259,27 @@ public class ExchangeRatesProvider extends ContentProvider
         HttpURLConnection connectionCryptsy = null;
         try {
             // final String currencyCode = currencies[i];
-            final URL URLCryptsy = new URL(urlCryptsy);
-            connectionCryptsy = (HttpURLConnection)URLCryptsy.openConnection();
-            connectionCryptsy.setConnectTimeout(Constants.HTTP_TIMEOUT_MS * 2);
-            connectionCryptsy.setReadTimeout(Constants.HTTP_TIMEOUT_MS * 2);
-            connectionCryptsy.connect();
+            //final URL URLCryptsy = new URL(urlCryptsy);
+            //connectionCryptsy = (HttpURLConnection)URLCryptsy.openConnection();
+            //connectionCryptsy.setConnectTimeout(Constants.HTTP_TIMEOUT_MS * 2);
+            //connectionCryptsy.setReadTimeout(Constants.HTTP_TIMEOUT_MS * 2);
+            //connectionCryptsy.connect();
 
             final StringBuilder contentCryptsy = new StringBuilder();
 
             Reader reader = null;
             try
             {
-                reader = new InputStreamReader(new BufferedInputStream(connectionCryptsy.getInputStream(), 1024));
-                Io.copy(reader, contentCryptsy);
-                final JSONObject head = new JSONObject(contentCryptsy.toString());
-                JSONObject returnObject = head.getJSONObject("return");
-                JSONObject markets = returnObject.getJSONObject("markets");
-                JSONObject coinInfo = markets.getJSONObject(CoinDefinition.coinTicker);
+                //reader = new InputStreamReader(new BufferedInputStream(connectionCryptsy.getInputStream(), 1024));
+                //Io.copy(reader, contentCryptsy);
+                //final JSONObject head = new JSONObject(contentCryptsy.toString());
+                //JSONObject returnObject = head.getJSONObject("return");
+                //JSONObject markets = returnObject.getJSONObject("markets");
+                //JSONObject coinInfo = markets.getJSONObject(CoinDefinition.coinTicker);
 
 
 
-                JSONArray recenttrades = coinInfo.getJSONArray("recenttrades");
+                //JSONArray recenttrades = coinInfo.getJSONArray("recenttrades");
 
                 double btcTraded = 0.0;
                 double coinTraded = 0.0;
@@ -305,7 +305,7 @@ public class ExchangeRatesProvider extends ContentProvider
                 // Fix things like 3,1250
                 //euros = euros.replace(",", ".");
                 //rates.put(currencyCryptsy, new ExchangeRate(currencyCryptsy, Utils.toNanoCoins(euros), URLCryptsy.getHost()));
-                if(currencyCryptsy.equalsIgnoreCase("BTC")) btcRate = averageTrade;
+                //if(currencyCryptsy.equalsIgnoreCase("BTC")) btcRate = averageTrade;
 
             }
             finally
@@ -351,7 +351,7 @@ public class ExchangeRatesProvider extends ContentProvider
         // Keep the LTC rate around for a bit
         Double btcRate = 0.0;
         //String currency = CoinDefinition.cryptsyMarketCurrency;
-        String url = "http://data.bter.com/api/1/ticker/"+ CoinDefinition.coinTicker.toLowerCase() + "_" + CoinDefinition.cryptsyMarketCurrency.toLowerCase();
+        //String url = "http://data.bter.com/api/1/ticker/"+ CoinDefinition.coinTicker.toLowerCase() + "_" + CoinDefinition.cryptsyMarketCurrency.toLowerCase();
 
 
 
@@ -380,7 +380,7 @@ public class ExchangeRatesProvider extends ContentProvider
                     Double averageTrade = head.getDouble("avg");
 
 
-                    if(currency.equalsIgnoreCase("BTC"))
+                    //if(currency.equalsIgnoreCase("BTC"))
                         btcRate = averageTrade;
                 }
 
