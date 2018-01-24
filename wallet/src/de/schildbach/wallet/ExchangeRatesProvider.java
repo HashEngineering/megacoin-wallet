@@ -257,7 +257,7 @@ public class ExchangeRatesProvider extends ContentProvider
 
 
         HttpURLConnection connectionCryptsy = null;
-        try {
+        //try {
             // final String currencyCode = currencies[i];
             //final URL URLCryptsy = new URL(urlCryptsy);
             //connectionCryptsy = (HttpURLConnection)URLCryptsy.openConnection();
@@ -265,11 +265,11 @@ public class ExchangeRatesProvider extends ContentProvider
             //connectionCryptsy.setReadTimeout(Constants.HTTP_TIMEOUT_MS * 2);
             //connectionCryptsy.connect();
 
-            final StringBuilder contentCryptsy = new StringBuilder();
+            //final StringBuilder contentCryptsy = new StringBuilder();
 
-            Reader reader = null;
+            /*Reader reader = null;
             try
-            {
+            {*/
                 //reader = new InputStreamReader(new BufferedInputStream(connectionCryptsy.getInputStream(), 1024));
                 //Io.copy(reader, contentCryptsy);
                 //final JSONObject head = new JSONObject(contentCryptsy.toString());
@@ -281,8 +281,8 @@ public class ExchangeRatesProvider extends ContentProvider
 
                 //JSONArray recenttrades = coinInfo.getJSONArray("recenttrades");
 
-                double btcTraded = 0.0;
-                double coinTraded = 0.0;
+                //double btcTraded = 0.0;
+                //double coinTraded = 0.0;
 
                 /*for(int i = 0; i < recenttrades.length(); ++i)
                 {
@@ -307,8 +307,8 @@ public class ExchangeRatesProvider extends ContentProvider
                 //rates.put(currencyCryptsy, new ExchangeRate(currencyCryptsy, Utils.toNanoCoins(euros), URLCryptsy.getHost()));
                 //if(currencyCryptsy.equalsIgnoreCase("BTC")) btcRate = averageTrade;
 
-            }
-            finally
+            //}
+            /*finally
             {
                 if (reader != null)
                 {
@@ -323,19 +323,19 @@ public class ExchangeRatesProvider extends ContentProvider
                 }
             }
             return btcRate;
-        }
+        }*/
         //catch (final IOException x)
-        {
+        /*{
             x.printStackTrace();
-        }
+        }*/
         //catch (final JSONException x)
-        {
+        /*{
             x.printStackTrace();
         }
         finally {
             if (connectionCryptsy != null)
                 connectionCryptsy.disconnect();
-        }
+        }*/
 
         return null;
     }
