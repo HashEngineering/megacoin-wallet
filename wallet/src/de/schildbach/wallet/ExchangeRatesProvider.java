@@ -251,8 +251,8 @@ public class ExchangeRatesProvider extends ContentProvider
         //final Map<String, ExchangeRate> rates = new TreeMap<String, ExchangeRate>();
         // Keep the LTC rate around for a bit
         Double btcRate = 0.0;
-        String currencyCryptsy = CoinDefinition.cryptsyMarketCurrency;
-        String urlCryptsy = "http://pubapi.cryptsy.com/api.php?method=singlemarketdata&marketid="+ CoinDefinition.cryptsyMarketId;
+        //String currencyCryptsy = CoinDefinition.cryptsyMarketCurrency;
+        //String urlCryptsy = "http://pubapi.cryptsy.com/api.php?method=singlemarketdata&marketid="+ CoinDefinition.cryptsyMarketId;
 
 
 
@@ -350,7 +350,7 @@ public class ExchangeRatesProvider extends ContentProvider
         //final Map<String, ExchangeRate> rates = new TreeMap<String, ExchangeRate>();
         // Keep the LTC rate around for a bit
         Double btcRate = 0.0;
-        String currency = CoinDefinition.cryptsyMarketCurrency;
+        //String currency = CoinDefinition.cryptsyMarketCurrency;
         String url = "http://data.bter.com/api/1/ticker/"+ CoinDefinition.coinTicker.toLowerCase() + "_" + CoinDefinition.cryptsyMarketCurrency.toLowerCase();
 
 
@@ -570,8 +570,8 @@ public class ExchangeRatesProvider extends ContentProvider
                 }
                 else
                 {
-                    rates.put(CoinDefinition.cryptsyMarketCurrency, new ExchangeRate(CoinDefinition.cryptsyMarketCurrency, GenericUtils.toNanoCoins(String.format("%.8f", btcRate).replace(",", "."), 0), cryptsyValue ? "pubapi.cryptsy.com" : "data.bter.com"));
-                    rates.put("m" + CoinDefinition.cryptsyMarketCurrency, new ExchangeRate("m" + CoinDefinition.cryptsyMarketCurrency, GenericUtils.toNanoCoins(String.format("%.5f", btcRate*1000).replace(",", "."), 0), cryptsyValue ? "pubapi.cryptsy.com" : "data.bter.com"));
+                    //rates.put(CoinDefinition.cryptsyMarketCurrency, new ExchangeRate(CoinDefinition.cryptsyMarketCurrency, GenericUtils.toNanoCoins(String.format("%.8f", btcRate).replace(",", "."), 0), cryptsyValue ? "pubapi.cryptsy.com" : "data.bter.com"));
+                    //rates.put("m" + CoinDefinition.cryptsyMarketCurrency, new ExchangeRate("m" + CoinDefinition.cryptsyMarketCurrency, GenericUtils.toNanoCoins(String.format("%.5f", btcRate*1000).replace(",", "."), 0), cryptsyValue ? "pubapi.cryptsy.com" : "data.bter.com"));
                 }
 
 
