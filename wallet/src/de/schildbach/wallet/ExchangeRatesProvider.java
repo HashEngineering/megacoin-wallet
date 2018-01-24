@@ -284,16 +284,16 @@ public class ExchangeRatesProvider extends ContentProvider
                 double btcTraded = 0.0;
                 double coinTraded = 0.0;
 
-                for(int i = 0; i < recenttrades.length(); ++i)
+                /*for(int i = 0; i < recenttrades.length(); ++i)
                 {
                     JSONObject trade = (JSONObject)recenttrades.get(i);
 
                     btcTraded += trade.getDouble("total");
                     coinTraded += trade.getDouble("quantity");
 
-                }
+                }*/
 
-                Double averageTrade = btcTraded / coinTraded;
+               // Double averageTrade = btcTraded / coinTraded;
 
 
 
@@ -359,11 +359,11 @@ public class ExchangeRatesProvider extends ContentProvider
         HttpURLConnection connection = null;
         try {
             // final String currencyCode = currencies[i];
-            final URL URL_bter = new URL(url);
+            /*final URL URL_bter = new URL(url);
             connection = (HttpURLConnection)URL_bter.openConnection();
             connection.setConnectTimeout(Constants.HTTP_TIMEOUT_MS * 2);
             connection.setReadTimeout(Constants.HTTP_TIMEOUT_MS * 2);
-            connection.connect();
+            connection.connect();*/
 
             final StringBuilder content = new StringBuilder();
 
