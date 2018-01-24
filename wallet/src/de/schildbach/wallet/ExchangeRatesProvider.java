@@ -324,11 +324,11 @@ public class ExchangeRatesProvider extends ContentProvider
             }
             return btcRate;
         }
-        catch (final IOException x)
+        //catch (final IOException x)
         {
             x.printStackTrace();
         }
-        catch (final JSONException x)
+        //catch (final JSONException x)
         {
             x.printStackTrace();
         }
