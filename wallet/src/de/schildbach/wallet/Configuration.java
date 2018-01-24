@@ -28,7 +28,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.text.format.DateUtils;
-import de.schildbach.wallet.ExchangeRatesProvider.ExchangeRate;
+//import de.schildbach.wallet.ExchangeRatesProvider.ExchangeRate;
 
 /**
  * @author Andreas Schildbach
@@ -200,7 +200,7 @@ public class Configuration
 		prefs.edit().putInt(PREFS_KEY_BEST_CHAIN_HEIGHT_EVER, bestChainHeightEver).commit();
 	}
 
-	public ExchangeRate getCachedExchangeRate()
+	/*public ExchangeRate getCachedExchangeRate()
 	{
 		if (prefs.contains(PREFS_KEY_CACHED_EXCHANGE_CURRENCY) && prefs.contains(PREFS_KEY_CACHED_EXCHANGE_RATE))
 		{
@@ -212,9 +212,9 @@ public class Configuration
 		{
 			return null;
 		}
-	}
+	}*/
 
-	public void setCachedExchangeRate(final ExchangeRate cachedExchangeRate)
+	/*public void setCachedExchangeRate(final ExchangeRate cachedExchangeRate)
 	{
 		final Editor edit = prefs.edit();
 		edit.putString(PREFS_KEY_CACHED_EXCHANGE_CURRENCY, cachedExchangeRate.currencyCode);
@@ -230,7 +230,7 @@ public class Configuration
 	public void setLastExchangeDirection(final boolean exchangeDirection)
 	{
 		prefs.edit().putBoolean(PREFS_KEY_LAST_EXCHANGE_DIRECTION, exchangeDirection).commit();
-	}
+	}*/
 
 	public boolean changeLogVersionCodeCrossed(final int currentVersionCode, final int triggeringVersionCode)
 	{
