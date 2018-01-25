@@ -8,7 +8,7 @@
 	<packaging>apk</packaging>
 
 	<version>1.01.1</version>
-	<name>Megacoin Wallet</name>
+	<name>Songcoin Wallet</name>
 
 	<parent>
 		<groupId>de.schildbach.wallet</groupId>
@@ -54,7 +54,7 @@
 		<dependency>
 			<groupId>com.google</groupId>
 
-			<artifactId>megacoinj</artifactId>
+			<artifactId>songcoinj</artifactId>
 
 			<version>0.12-SNAPSHOT</version>
 		</dependency>
