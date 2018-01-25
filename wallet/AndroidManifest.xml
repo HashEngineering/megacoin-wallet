@@ -3,7 +3,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
 
-	package="de.schildbach.wallet.megacoin"
+	package="de.schildbach.wallet.songcoin"
 	android:installLocation="internalOnly"
 	android:versionCode="10034"
 	android:versionName="0.3.4" >
@@ -93,7 +93,7 @@
 			<intent-filter android:label="@string/send_coins_activity_title" >
 				<action android:name="android.intent.action.VIEW" />
 
-				<data android:scheme="megacoin" />
+				<data android:scheme="songcoin" />
 
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
@@ -101,7 +101,7 @@
 			<intent-filter android:label="@string/send_coins_activity_title" >
 				<action android:name="android.nfc.action.NDEF_DISCOVERED" />
 
-				<data android:scheme="megacoin" />
+				<data android:scheme="songcoin" />
 
 				<category android:name="android.intent.category.DEFAULT" />
 			</intent-filter>
@@ -191,12 +191,12 @@
         <!-- Need to update this for the coin -->
 		<provider
 			android:name="de.schildbach.wallet.AddressBookProvider"
-			android:authorities="de.schildbach.wallet.megacoin.address_book"
+			android:authorities="de.schildbach.wallet.songcoin.address_book"
 			android:exported="false" />
         <!-- Need to update this for the coin -->
 		<provider
 			android:name="de.schildbach.wallet.ExchangeRatesProvider"
-			android:authorities="de.schildbach.wallet.megacoin.exchange_rates"
+			android:authorities="de.schildbach.wallet.songcoin.exchange_rates"
 			android:exported="false" />
 
 		<receiver
